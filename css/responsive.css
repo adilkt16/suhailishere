@@ -1,0 +1,303 @@
+/* ==========================================================================
+   Responsive Adaptations
+   Mobile-first & Multi-breakpoint overrides
+   ========================================================================== */
+
+/* --- Mobile Devices (Max-width: 767px) --- */
+@media (max-width: 767px) {
+  /* Navigation & Header */
+  .header-pill {
+    padding: 0.75rem 1rem;
+  }
+
+  .brand-monogram {
+    font-size: 0.92rem;
+  }
+
+  .brand-monogram .monogram-badge {
+    width: 28px;
+    height: 28px;
+    font-size: 0.7rem;
+  }
+
+  /* Hero Section Mobile Adaptation */
+  .hero-section {
+    min-height: 100svh;
+    padding-top: 4.5rem;
+    padding-bottom: 2.5rem;
+    align-items: flex-end;
+  }
+
+  .hero-portrait-wrap {
+    width: 100%;
+    height: 60%;
+    top: 0;
+    bottom: auto;
+  }
+
+  .hero-portrait-img {
+    object-position: center 12%;
+  }
+
+  .hero-overlay-left {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.65) 45%, #000000 80%);
+  }
+
+  .hero-content-container {
+    padding-top: 14rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .hero-quote-card {
+    padding: 2rem 1.5rem;
+    border-radius: 22px;
+    max-width: 100%;
+    margin: 0 auto;
+    background: rgba(18, 18, 20, 0.85);
+  }
+
+  .hero-statement {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .quote-watermark-top {
+    width: 56px;
+    height: 48px;
+    top: 0.75rem;
+    left: 0.75rem;
+  }
+
+  .quote-watermark-bottom {
+    width: 56px;
+    height: 48px;
+    bottom: 0.75rem;
+    right: 0.75rem;
+  }
+
+  .hero-name {
+    font-size: 1.12rem;
+  }
+
+  .hero-designation {
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  /* Subnav Mobile: Toggle to Dropdown or Horizontal Scroll */
+  .subnav-outer-wrap {
+    top: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .subnav-pill-container {
+    display: none; /* Replaced by mobile dropdown trigger on small screens */
+  }
+
+  .mobile-subnav-dropdown {
+    display: block;
+  }
+
+  /* Section Spacing */
+  .portfolio-section {
+    padding: 3.5rem 0;
+  }
+
+  .section-title {
+    font-size: 1.65rem;
+  }
+
+  /* About Section */
+  .about-portrait-card {
+    max-width: 300px;
+    border-radius: 22px;
+  }
+
+  .about-heading {
+    font-size: 1.65rem;
+    text-align: center;
+  }
+
+  .about-role-subline {
+    text-align: center;
+    font-size: 0.85rem;
+  }
+
+  .about-bio-paragraphs p {
+    font-size: 0.92rem;
+    line-height: 1.75;
+  }
+
+  /* Experience Section */
+  .experience-card {
+    padding: 1.75rem 1.25rem;
+    border-radius: 22px;
+  }
+
+  .role-title {
+    font-size: 1.2rem;
+  }
+
+  .org-line {
+    font-size: 0.92rem;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .experience-responsibilities li {
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  /* Philosophy Section */
+  .philosophy-box {
+    border-radius: 24px;
+  }
+
+  .philosophy-left-col {
+    padding: 2.25rem 1.25rem;
+  }
+
+  .philosophy-right-col {
+    padding: 2.25rem 1.25rem;
+  }
+
+  .philosophy-quote-lead {
+    font-size: 1.1rem;
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .philosophy-pillar {
+    padding: 1.25rem;
+    border-radius: 16px;
+  }
+
+  /* Credentials Section */
+  .credential-category-card {
+    padding: 1.75rem 1.25rem;
+    border-radius: 22px;
+  }
+
+  .category-title {
+    font-size: 1.18rem;
+  }
+
+  .credential-item {
+    padding: 1.25rem;
+    border-radius: 16px;
+  }
+
+  .item-name {
+    font-size: 0.96rem;
+  }
+
+  /* Connect Section */
+  .connect-card-form {
+    padding: 2rem 1.25rem;
+    border-radius: 22px;
+  }
+
+  .input-field,
+  .select-field,
+  .textarea-field {
+    padding: 0.85rem 1.15rem;
+    font-size: 0.9rem;
+  }
+
+  .connect-channels-card {
+    padding: 1.5rem 1.25rem;
+    border-radius: 22px;
+  }
+
+  .channel-link-item {
+    padding: 0.85rem 1rem;
+  }
+
+  /* Speed Dial */
+  .speed-dial-wrap {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .speed-dial-container,
+  .speed-dial-trigger {
+    width: 52px;
+    height: 52px;
+  }
+
+  .speed-dial-item {
+    width: 44px;
+    height: 44px;
+  }
+
+  .speed-dial-menu {
+    bottom: 62px;
+    right: 4px;
+  }
+
+  .speed-dial-tooltip {
+    display: none; /* Hide tooltips on mobile touch */
+  }
+
+  /* Footer */
+  .site-footer {
+    padding: 2.5rem 0;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.25rem;
+  }
+}
+
+/* --- Tablet Devices (768px - 1023px) --- */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-portrait-wrap {
+    width: 50%;
+  }
+
+  .hero-overlay-left {
+    background: linear-gradient(90deg, #000000 0%, #000000 30%, rgba(0, 0, 0, 0.7) 60%, rgba(0, 0, 0, 0.25) 100%);
+  }
+
+  .hero-quote-card {
+    max-width: 480px;
+  }
+
+  .subnav-pill-container {
+    gap: 0.75rem;
+  }
+
+  .subnav-btn {
+    padding: 0.45rem 0.85rem;
+    font-size: 0.86rem;
+  }
+}
+
+/* --- High-DPI / Large Desktops (min-width: 1600px) --- */
+@media (min-width: 1600px) {
+  .hero-quote-card {
+    max-width: 620px;
+    padding: 3.25rem 3rem;
+  }
+
+  .hero-statement {
+    font-size: 1.25rem;
+  }
+
+  .section-title {
+    font-size: 2.6rem;
+  }
+
+  .about-heading {
+    font-size: 2.5rem;
+  }
+
+  .philosophy-quote-lead {
+    font-size: 1.55rem;
+  }
+}
+
