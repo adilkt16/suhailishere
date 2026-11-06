@@ -14,6 +14,8 @@ The design translates the editorial aesthetics, dark atmospheric palette, restra
 - **Primary Domain:** Business Operations, Executive Support & Office Coordination
 - **Foundational Background:** B.Sc. Psychology & PGDM in Human Resource Management
 - **Key Competencies:** Executive Office Support, Stakeholder Management, HR Structuring & SOP Development, Project Coordination, and Analytical Data Modeling
+- **Distinctive Visual Identity:** Premium Cloud Grey (`#D9DDE0`), Chrome Black (`#25272B`), Midnight Blue-Purple (`#30204F`), and handcrafted Purple Rose botanical artwork (`#694A83`).
+- **Personal Spiritual Anchor:** Dedicated "Quran Journey" section honoring his lifelong connection with the Holy Quran and early international recitation milestones (First Rank, Under-10 30-Juz Hifz).
 
 ---
 
@@ -86,6 +88,7 @@ Simply double-click `index.html` or open it directly in Google Chrome, Firefox, 
 | **About Section** | Founder biography and portfolio conglomerate logos. | 4-paragraph editorial biography highlighting academic background in Psychology/HRM, healthcare experience, and current executive office mandate. Continuous marquee ticker of verified institutional affiliations. |
 | **Experience Section** | Founder milestone cards and strategic advisory slides. | Premium chronological cards with verified metrics (e.g. 53 recruitment TATs, 537 employees, 200+ audited JCI records, multilingual operations). All 7 roles chronologically presented with CV 2 fidelity. |
 | **Philosophy Section** | Founder life mission statement and philanthropic vision. | Split-container layout with dark editorial framing, showcasing Suhail's documented objective and 3 foundational pillars: Strategic Alignment, Initiative & Team Support, and Continuous Unlearning/Relearning. |
+| **Quran Journey Section** | *(Personal identity dimension)* | Dedicated identity section celebrating Suhail's lifelong connection with the Quran, featuring Surah Al-Qamar (54:17) in authentic classical Arabic calligraphy (Amiri font), verified translation, confirmed Under-10 international 30-Juz Hifz milestone, and the custom illustrated purple rose botanical signature. |
 | **Credentials Section** | Press appearances, podcasts, and media cards. | Reimagined as "Credentials & Development" using the reference's dark category cards: Formal Education (PGDM 84%, B.Sc. Psychology Grade A), Certifications (IIT Kharagpur NPTEL Emotional Intelligence Grade A, IIT Palakkad Analytics, RSET ML), and Institutional Leadership. |
 | **Connect Section** | Dual-column contact form with newsletter signup and email. | Dual-column layout: left card features interactive form validation and direct mailto links; right card features LinkedIn link, direct email, location, and working languages. |
 | **Floating Speed-Dial** | Circular bottom-right floating button expanding to section shortcuts. | Custom interactive speed-dial (`.speed-dial-wrap`) that expands on hover/tap to display section shortcuts with smooth tooltips. |

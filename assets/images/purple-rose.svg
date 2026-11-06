@@ -1,0 +1,257 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%" fill="none" aria-label="Botanical Purple Rose Illustration">
+  <defs>
+    <!-- Deep midnight purple petal gradient -->
+    <radialGradient id="petalDeep" cx="50%" cy="50%" r="50%" fx="40%" fy="30%">
+      <stop offset="0%" stop-color="#462F6C" />
+      <stop offset="60%" stop-color="#30204F" />
+      <stop offset="100%" stop-color="#1B132C" />
+    </radialGradient>
+
+    <!-- Main velvety purple rose gradient -->
+    <linearGradient id="roseVelvet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#825B9E" />
+      <stop offset="35%" stop-color="#694A83" />
+      <stop offset="70%" stop-color="#432863" />
+      <stop offset="100%" stop-color="#24173B" />
+    </linearGradient>
+
+    <!-- Highlight petal gradient with soft blue-lavender sheen -->
+    <linearGradient id="petalHighlight" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#B89FD3" />
+      <stop offset="30%" stop-color="#8E69AF" />
+      <stop offset="75%" stop-color="#553877" />
+      <stop offset="100%" stop-color="#2C1B47" />
+    </linearGradient>
+
+    <!-- Outer luminous petal gradient -->
+    <linearGradient id="outerPetal" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#543673" />
+      <stop offset="50%" stop-color="#735194" />
+      <stop offset="100%" stop-color="#3A2254" />
+    </linearGradient>
+
+    <!-- Petal edge rim highlight -->
+    <linearGradient id="rimGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="rgba(217, 221, 224, 0.6)" />
+      <stop offset="50%" stop-color="rgba(184, 159, 211, 0.9)" />
+      <stop offset="100%" stop-color="rgba(105, 74, 131, 0.3)" />
+    </linearGradient>
+
+    <!-- Botanical deep chrome-slate green for stem and leaves -->
+    <linearGradient id="stemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#41534B" />
+      <stop offset="45%" stop-color="#2B3732" />
+      <stop offset="100%" stop-color="#18211E" />
+    </linearGradient>
+
+    <linearGradient id="leafGrad" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#4F645B" />
+      <stop offset="40%" stop-color="#34433D" />
+      <stop offset="85%" stop-color="#1D2622" />
+      <stop offset="100%" stop-color="#131B18" />
+    </linearGradient>
+
+    <!-- Ambient petal shadow -->
+    <filter id="petalShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#100A1C" flood-opacity="0.65" />
+    </filter>
+
+    <!-- Gentle bloom glow -->
+    <filter id="bloomGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Ambient background glow behind the rose -->
+  <circle cx="250" cy="220" r="160" fill="url(#petalDeep)" opacity="0.35" filter="url(#bloomGlow)" />
+
+  <!-- Botanical Stem & Thorns -->
+  <g class="rose-stem-group" opacity="0.95">
+    <!-- Main stem curve -->
+    <path d="M248 310 C246 360, 240 410, 225 465 C223 472, 229 476, 235 474 C248 425, 256 370, 258 310 Z" 
+          fill="url(#stemGrad)" />
+
+    <!-- Stem highlight edge -->
+    <path d="M248 315 C246 365, 240 415, 226 465" 
+          stroke="rgba(217, 221, 224, 0.25)" stroke-width="1.2" stroke-linecap="round" fill="none" />
+
+    <!-- Delicate thorn left -->
+    <path d="M245 355 C238 357, 228 359, 224 366 C232 368, 241 366, 246 364 Z" 
+          fill="#34433D" />
+
+    <!-- Delicate thorn right -->
+    <path d="M254 395 C263 398, 273 402, 277 409 C269 410, 260 406, 253 403 Z" 
+          fill="#34433D" />
+
+    <!-- Left Leaf -->
+    <g class="rose-leaf-left" filter="url(#petalShadow)">
+      <!-- Leaf blade -->
+      <path d="M245 340 C210 330, 160 342, 135 375 C155 388, 205 385, 244 350 Z" 
+            fill="url(#leafGrad)" />
+      <!-- Leaf central vein -->
+      <path d="M243 344 C205 350, 170 360, 138 373" 
+            stroke="#5E786D" stroke-width="1.5" stroke-linecap="round" fill="none" />
+      <!-- Secondary veins -->
+      <path d="M225 348 C215 340, 202 338, 195 338" stroke="#485D55" stroke-width="0.9" fill="none" />
+      <path d="M208 353 C198 347, 185 347, 178 348" stroke="#485D55" stroke-width="0.9" fill="none" />
+      <path d="M190 359 C180 354, 168 357, 160 360" stroke="#485D55" stroke-width="0.9" fill="none" />
+      <path d="M225 348 C222 360, 214 370, 208 376" stroke="#485D55" stroke-width="0.9" fill="none" />
+      <path d="M205 355 C200 367, 190 375, 182 380" stroke="#485D55" stroke-width="0.9" fill="none" />
+      <!-- Fine serrated detail rim -->
+      <path d="M136 374 C162 343, 210 332, 244 341" 
+            stroke="rgba(217, 221, 224, 0.2)" stroke-width="0.8" fill="none" />
+    </g>
+
+    <!-- Right Leaf -->
+    <g class="rose-leaf-right" filter="url(#petalShadow)">
+      <!-- Leaf blade -->
+      <path d="M256 365 C295 352, 345 362, 372 392 C350 408, 300 405, 255 375 Z" 
+            fill="url(#leafGrad)" />
+      <!-- Leaf central vein -->
+      <path d="M257 368 C295 372, 335 380, 368 390" 
+            stroke="#5E786D" stroke-width="1.5" stroke-linecap="round" fill="none" />
+      <!-- Secondary veins -->
+      <path d="M278 370 C288 362, 302 360, 310 360" stroke="#485D55" stroke-width="0.9" fill="none" />
+      <path d="M298 374 C308 367, 322 367, 330 369" stroke="#485D55" stroke-width="0.9" fill="none" />
+      <path d="M278 371 C282 383, 290 392, 298 397" stroke="#485D55" stroke-width="0.9" fill="none" />
+      <path d="M300 376 C306 387, 316 395, 325 399" stroke="#485D55" stroke-width="0.9" fill="none" />
+      <path d="M256 366 C295 353, 344 363, 371 391" 
+            stroke="rgba(217, 221, 224, 0.2)" stroke-width="0.8" fill="none" />
+    </g>
+
+    <!-- Calyx & Sepals curling beneath petals -->
+    <path d="M235 305 C222 325, 205 338, 185 344 C205 335, 222 318, 238 298 Z" fill="#2E3C36" />
+    <path d="M265 305 C278 325, 298 338, 318 344 C298 335, 280 318, 262 298 Z" fill="#2E3C36" />
+    <path d="M250 308 C252 328, 255 348, 252 360 C248 346, 248 328, 248 308 Z" fill="#3B4C45" />
+  </g>
+
+  <!-- Botanical Rose Petal Assembly (Layered from exterior to inner heart) -->
+  <g class="rose-flower-head" id="rosePetals">
+    <!-- OUTER LAYER 1: Deep Base & Reclining Guard Petals -->
+    <!-- Lower Left Outer Petal -->
+    <path d="M175 220 C140 240, 130 280, 160 315 C190 350, 240 335, 250 315 C220 310, 185 275, 175 220 Z" 
+          fill="url(#outerPetal)" filter="url(#petalShadow)" />
+    <path d="M160 315 C132 282, 142 242, 174 222" 
+          stroke="url(#rimGlow)" stroke-width="1.2" fill="none" />
+
+    <!-- Lower Right Outer Petal -->
+    <path d="M325 220 C360 240, 370 280, 340 315 C310 350, 260 335, 250 315 C280 310, 315 275, 325 220 Z" 
+          fill="url(#outerPetal)" filter="url(#petalShadow)" />
+    <path d="M340 315 C368 282, 358 242, 326 222" 
+          stroke="url(#rimGlow)" stroke-width="1.2" fill="none" />
+
+    <!-- Broad Bottom Apron Petal -->
+    <path d="M190 280 C210 325, 290 325, 310 280 C290 305, 210 305, 190 280 Z" 
+          fill="url(#roseVelvet)" filter="url(#petalShadow)" />
+    <path d="M190 280 C220 318, 280 318, 310 280" 
+          stroke="url(#rimGlow)" stroke-width="1.4" fill="none" />
+
+    <!-- Top Left Arching Guard Petal -->
+    <path d="M150 190 C130 145, 175 110, 220 120 C200 135, 165 155, 150 190 Z" 
+          fill="url(#outerPetal)" />
+    <path d="M150 190 C165 152, 202 133, 220 120 C175 110, 132 145, 150 190 Z" 
+          stroke="url(#rimGlow)" stroke-width="1" fill="none" />
+
+    <!-- Top Right Arching Guard Petal -->
+    <path d="M350 190 C370 145, 325 110, 280 120 C300 135, 335 155, 350 190 Z" 
+          fill="url(#outerPetal)" />
+    <path d="M350 190 C335 152, 298 133, 280 120 C325 110, 368 145, 350 190 Z" 
+          stroke="url(#rimGlow)" stroke-width="1" fill="none" />
+
+    <!-- LAYER 2: Intermediate Curving Petals -->
+    <!-- Mid Left Curving Petal -->
+    <path d="M155 200 C135 240, 155 275, 195 285 C220 292, 230 270, 205 255 C175 240, 165 220, 155 200 Z" 
+          fill="url(#roseVelvet)" filter="url(#petalShadow)" />
+    <path d="M155 200 C136 238, 156 274, 195 285" 
+          stroke="url(#rimGlow)" stroke-width="1.5" stroke-linecap="round" fill="none" />
+    <!-- Fine organic petal vein -->
+    <path d="M170 230 C185 245, 195 260, 205 275" 
+          stroke="rgba(184, 159, 211, 0.3)" stroke-width="0.8" fill="none" />
+
+    <!-- Mid Right Curving Petal -->
+    <path d="M345 200 C365 240, 345 275, 305 285 C280 292, 270 270, 295 255 C325 240, 335 220, 345 200 Z" 
+          fill="url(#roseVelvet)" filter="url(#petalShadow)" />
+    <path d="M345 200 C364 238, 344 274, 305 285" 
+          stroke="url(#rimGlow)" stroke-width="1.5" stroke-linecap="round" fill="none" />
+    <path d="M330 230 C315 245, 305 260, 295 275" 
+          stroke="rgba(184, 159, 211, 0.3)" stroke-width="0.8" fill="none" />
+
+    <!-- Upper Left Overlapping Cup Petal -->
+    <path d="M165 170 C155 130, 205 115, 235 135 C215 155, 185 160, 165 170 Z" 
+          fill="url(#petalHighlight)" filter="url(#petalShadow)" />
+    <path d="M165 170 C155 130, 205 115, 235 135" 
+          stroke="url(#rimGlow)" stroke-width="1.3" fill="none" />
+
+    <!-- Upper Right Overlapping Cup Petal -->
+    <path d="M335 170 C345 130, 295 115, 265 135 C285 155, 315 160, 335 170 Z" 
+          fill="url(#petalHighlight)" filter="url(#petalShadow)" />
+    <path d="M335 170 C345 130, 295 115, 265 135" 
+          stroke="url(#rimGlow)" stroke-width="1.3" fill="none" />
+
+    <!-- LAYER 3: Core Cup Petals (Sculpting the Blossom) -->
+    <!-- Front Left Main Scoop Petal -->
+    <path d="M180 215 C175 265, 225 280, 255 265 C230 250, 195 240, 180 215 Z" 
+          fill="url(#petalHighlight)" filter="url(#petalShadow)" />
+    <path d="M180 215 C176 262, 222 278, 255 265" 
+          stroke="url(#rimGlow)" stroke-width="1.6" stroke-linecap="round" fill="none" />
+    <path d="M195 235 C210 248, 225 256, 240 260" 
+          stroke="rgba(217, 221, 224, 0.3)" stroke-width="0.8" fill="none" />
+
+    <!-- Front Right Main Scoop Petal -->
+    <path d="M320 215 C325 265, 275 280, 245 265 C270 250, 305 240, 320 215 Z" 
+          fill="url(#petalHighlight)" filter="url(#petalShadow)" />
+    <path d="M320 215 C324 262, 278 278, 245 265" 
+          stroke="url(#rimGlow)" stroke-width="1.6" stroke-linecap="round" fill="none" />
+    <path d="M305 235 C290 248, 275 256, 260 260" 
+          stroke="rgba(217, 221, 224, 0.3)" stroke-width="0.8" fill="none" />
+
+    <!-- Front Center Cradle Petal -->
+    <path d="M210 240 C230 265, 270 265, 290 240 C270 250, 230 250, 210 240 Z" 
+          fill="url(#roseVelvet)" />
+    <path d="M210 240 C230 262, 270 262, 290 240" 
+          stroke="url(#rimGlow)" stroke-width="1.4" fill="none" />
+
+    <!-- LAYER 4: The Inner Spiral Center (Bud & Whorl) -->
+    <!-- Left Inner Whorl -->
+    <path d="M205 185 C195 155, 230 145, 250 158 C230 168, 215 175, 205 185 Z" 
+          fill="url(#petalDeep)" />
+    <path d="M205 185 C196 157, 228 147, 250 158" 
+          stroke="url(#rimGlow)" stroke-width="1.2" fill="none" />
+
+    <!-- Right Inner Whorl -->
+    <path d="M295 185 C305 155, 270 145, 250 158 C270 168, 285 175, 295 185 Z" 
+          fill="url(#petalDeep)" />
+    <path d="M295 185 C304 157, 272 147, 250 158" 
+          stroke="url(#rimGlow)" stroke-width="1.2" fill="none" />
+
+    <!-- Center Enveloping Petal -->
+    <path d="M218 200 C215 170, 250 165, 275 180 C265 195, 240 205, 218 200 Z" 
+          fill="url(#roseVelvet)" />
+    <path d="M218 200 C216 172, 248 167, 275 180" 
+          stroke="url(#rimGlow)" stroke-width="1.3" fill="none" />
+
+    <!-- Swirling Center Heart Heart -->
+    <path d="M232 188 C230 172, 255 170, 262 182 C255 190, 240 192, 232 188 Z" 
+          fill="url(#petalDeep)" />
+    <path d="M232 188 C231 174, 253 172, 262 182" 
+          stroke="url(#rimGlow)" stroke-width="1.1" fill="none" />
+
+    <!-- Tight Core Bud -->
+    <path d="M242 180 C240 174, 252 173, 255 178 C252 182, 245 182, 242 180 Z" 
+          fill="#B89FD3" />
+
+    <!-- Delicate Dewdrop Highlight on Left Petal -->
+    <g class="rose-dewdrop" transform="translate(182, 248)">
+      <ellipse cx="0" cy="0" rx="3.5" ry="2.5" fill="rgba(255, 255, 255, 0.45)" />
+      <circle cx="-1" cy="-0.8" r="1.1" fill="#FFFFFF" />
+      <path d="M0 1.5 C2 1.5, 3 0.5, 3 -0.5" stroke="rgba(36, 23, 59, 0.6)" stroke-width="0.5" fill="none" />
+    </g>
+
+    <!-- Delicate Dewdrop on Right Petal -->
+    <g class="rose-dewdrop" transform="translate(305, 252)">
+      <ellipse cx="0" cy="0" rx="3" ry="2" fill="rgba(255, 255, 255, 0.4)" />
+      <circle cx="-0.8" cy="-0.6" r="0.9" fill="#FFFFFF" />
+    </g>
+  </g>
+</svg>

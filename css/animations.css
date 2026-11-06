@@ -102,6 +102,22 @@
   }
 }
 
+/* --- Ambient Purple Rose Breathing Glow --- */
+@keyframes roseGlowPulse {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.06);
+  }
+}
+
+.rose-glow-accent {
+  animation: roseGlowPulse 6s ease-in-out infinite;
+}
+
 /* --- Accessibility: prefers-reduced-motion --- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -117,6 +133,10 @@
   }
 
   .marquee-track {
+    animation: none !important;
+  }
+
+  .rose-glow-accent {
     animation: none !important;
   }
 }
