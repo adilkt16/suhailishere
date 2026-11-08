@@ -14,8 +14,11 @@ The design translates the editorial aesthetics, dark atmospheric palette, restra
 - **Primary Domain:** Business Operations, Executive Support & Office Coordination
 - **Foundational Background:** B.Sc. Psychology & PGDM in Human Resource Management
 - **Key Competencies:** Executive Office Support, Stakeholder Management, HR Structuring & SOP Development, Project Coordination, and Analytical Data Modeling
-- **Distinctive Visual Identity:** Premium Cloud Grey (`#D9DDE0`), Chrome Black (`#25272B`), Midnight Blue-Purple (`#30204F`), and handcrafted Purple Rose botanical artwork (`#694A83`).
-- **Personal Spiritual Anchor:** Dedicated "Quran Journey" section honoring his lifelong connection with the Holy Quran and early international recitation milestones (First Rank, Under-10 30-Juz Hifz).
+- **Dominant Visual Identity:** Dark Purple (`#220C3F`) as primary color anchor, surrounded by deep canvas (`#150827`), card surfaces (`#2B104E`, `#361560`), warm off-white (`#FAF8F5`), subtle metallic chrome, antique gold accents (`#C5A059`), and handcrafted Purple Rose botanical artwork (`assets/images/purple-rose.svg`).
+- **Islamic & Arabic-Inspired Visual Language:** Architectural arch/mihrab framing, symmetric arabesque section dividers, classical Rub el Hizb (8-pointed star ۞) markers, and authentic Arabic typography (`Amiri` font with full tashkeel diacritics and RTL layout).
+- **Separated Dual-Experience Architecture:** 
+  - `index.html`: Main Professional Portfolio presenting Suhail primarily as a business operations professional and Executive Assistant.
+  - `personal-journey.html`: Dedicated, separate Personal Journey page highlighting his verified Quran recitation milestones (Under-10 30-Juz Hifz First Rank) and lifelong character principles.
 
 ---
 
@@ -34,10 +37,11 @@ Built strictly with vanilla web standards — no build tools, frameworks, or run
 
 ```text
 suhail-portfolio/
-├── index.html                  # Main portfolio single-page application
+├── index.html                  # Main professional portfolio experience
+├── personal-journey.html       # Dedicated personal achievements & Quran journey page
 ├── css/
-│   ├── style.css               # Core styling, tokens, layout & section styling
-│   ├── responsive.css          # Responsive breakpoint overrides (mobile, tablet, desktop)
+│   ├── style.css               # Core design system (#220C3F), Islamic visual tokens, layouts
+│   ├── responsive.css          # Multi-device breakpoint rules (mobile, tablet, desktop)
 │   └── animations.css          # Keyframes, scroll-reveal transitions, reduced-motion rules
 ├── js/
 │   ├── main.js                 # Contact form validation & toast notifications
@@ -45,8 +49,9 @@ suhail-portfolio/
 │   └── animations.js           # Scroll-triggered reveal animations
 ├── assets/
 │   ├── images/
-│   │   ├── suhail-hero.jpg     # Hero section photograph placeholder (1200x1600, aspect ~3:4)
-│   │   └── suhail-portrait.jpg # About section portrait placeholder (900x1200, aspect 3:4)
+│   │   ├── suhail-hero.jpg     # Hero section photograph (aspect ~3:4)
+│   │   ├── suhail-portrait.jpg # About section portrait (aspect 3:4)
+│   │   └── purple-rose.svg     # Handcrafted purple rose signature botanical artwork
 │   ├── icons/                  # SVG assets
 │   └── fonts/                  # Font resources
 ├── CV SUHAIL SIFHEEQ - HR .pdf # Primary verified source document
@@ -88,7 +93,7 @@ Simply double-click `index.html` or open it directly in Google Chrome, Firefox, 
 | **About Section** | Founder biography and portfolio conglomerate logos. | 4-paragraph editorial biography highlighting academic background in Psychology/HRM, healthcare experience, and current executive office mandate. Continuous marquee ticker of verified institutional affiliations. |
 | **Experience Section** | Founder milestone cards and strategic advisory slides. | Premium chronological cards with verified metrics (e.g. 53 recruitment TATs, 537 employees, 200+ audited JCI records, multilingual operations). All 7 roles chronologically presented with CV 2 fidelity. |
 | **Philosophy Section** | Founder life mission statement and philanthropic vision. | Split-container layout with dark editorial framing, showcasing Suhail's documented objective and 3 foundational pillars: Strategic Alignment, Initiative & Team Support, and Continuous Unlearning/Relearning. |
-| **Quran Journey Section** | *(Personal identity dimension)* | Dedicated identity section celebrating Suhail's lifelong connection with the Quran, featuring Surah Al-Qamar (54:17) in authentic classical Arabic calligraphy (Amiri font), verified translation, confirmed Under-10 international 30-Juz Hifz milestone, and the custom illustrated purple rose botanical signature. |
+| **Personal Bridge & Dedicated Experience** | *(Personal identity dimension)* | Main site features an editorial discovery bridge (`#personal-preview`) that seamlessly guides visitors to `personal-journey.html` — a dedicated personal achievements page featuring Surah Al-Qamar (54:17) in classical Naskh (Amiri font), verified translation, confirmed Under-10 international 30-Juz Hifz milestone, signature purple rose botanical artwork, 3 character foundation pillars, and reciprocal return navigation. |
 | **Credentials Section** | Press appearances, podcasts, and media cards. | Reimagined as "Credentials & Development" using the reference's dark category cards: Formal Education (PGDM 84%, B.Sc. Psychology Grade A), Certifications (IIT Kharagpur NPTEL Emotional Intelligence Grade A, IIT Palakkad Analytics, RSET ML), and Institutional Leadership. |
 | **Connect Section** | Dual-column contact form with newsletter signup and email. | Dual-column layout: left card features interactive form validation and direct mailto links; right card features LinkedIn link, direct email, location, and working languages. |
 | **Floating Speed-Dial** | Circular bottom-right floating button expanding to section shortcuts. | Custom interactive speed-dial (`.speed-dial-wrap`) that expands on hover/tap to display section shortcuts with smooth tooltips. |

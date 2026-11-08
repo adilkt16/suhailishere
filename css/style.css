@@ -1,71 +1,95 @@
 /* ==========================================================================
    Suhail Sidheeq — Personal Portfolio
-   Refined Visual Identity: Cloud Grey, Chrome Black & Midnight Purple
-   Design Reference: MS Holdings Founder Page (ms.holdings/founder)
+   Refined Visual Identity: Dark Purple (#220C3F) Dominant Palette
+   Arabic & Islamic-Inspired Aesthetics & MS Holdings Reference Architecture
    Vanilla CSS — Modern, Editorial, Refined Aesthetic
    ========================================================================== */
 
 /* --- Central CSS Variables & Design Tokens --- */
 :root {
-  /* A. Cloud Grey Palette (Soft, atmospheric, sophisticated cool neutral) */
-  --cloud-grey-base: #D9DDE0;
-  --cloud-grey-light: #E8ECEF;
-  --cloud-grey-soft: #F1F4F6;
-  --cloud-grey-surface: rgba(217, 221, 224, 0.88);
-  --cloud-grey-muted: #B8C0C6;
-  --cloud-grey-border: rgba(217, 221, 224, 0.22);
-  --cloud-grey-border-light: rgba(217, 221, 224, 0.45);
+  /* =========================================================================
+     1. New Visual Identity: Dark Purple (#220C3F) Dominant Palette
+     The client specified primary color: #220C3F
+     ========================================================================= */
+  --purple-darkest: #130623;           /* Deepest midnight dark purple canvas */
+  --purple-deep: #160829;              /* Deep canvas base for atmospheric depth */
+  --purple-primary: #220C3F;           /* Exact client specified dominant color */
+  --purple-surface: #2B104E;           /* Rich dark purple card surface */
+  --purple-surface-elevated: #361560;  /* Elevated cards, interactive elements */
+  --purple-surface-highlight: #451B7C; /* Hover & active highlights */
+  --purple-vibrant: #6E30BF;           /* Vibrant purple accent & focus rings */
+  --purple-luminous: #8F49EE;          /* Luminous purple for special badges */
+  --purple-soft: #CBB5E8;              /* Soft lavender for subtitles & accents */
+  --purple-glow: rgba(34, 12, 63, 0.45);
+  --purple-ambient: rgba(54, 21, 96, 0.28);
+  --purple-tint: rgba(34, 12, 63, 0.65);
 
-  /* B. Chrome Black Palette (Refined metallic blacks, restrained sheen) */
-  --chrome-black-deep: #0D0E11;
-  --chrome-black-base: #141619;
-  --chrome-black-surface: #1E2126;
-  --chrome-black-card: #25272B;
-  --chrome-black-elevated: #2E3238;
-  --chrome-metallic-sheen: linear-gradient(135deg, #32363D 0%, #25272B 50%, #1A1C20 100%);
-  --chrome-gradient-card: linear-gradient(140deg, #25272B 0%, #1E2024 45%, #15171A 100%);
-  --chrome-border-highlight: linear-gradient(90deg, transparent 0%, rgba(217, 221, 224, 0.3) 25%, rgba(255, 255, 255, 0.85) 50%, rgba(217, 221, 224, 0.3) 75%, transparent 100%);
-  --chrome-edge-highlight: linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, rgba(217, 221, 224, 0.2) 60%, transparent 100%);
-  --chrome-text-sheen: linear-gradient(135deg, #FFFFFF 0%, #D9DDE0 50%, #A2ABB3 100%);
+  /* Legacy aliases mapped directly to new #220C3F system */
+  --midnight-purple-deep: #130623;
+  --midnight-purple-base: #220C3F;     /* Dominant client dark purple */
+  --midnight-purple-rich: #2B104E;
+  --midnight-purple-luminous: #361560;
+  --midnight-purple-glow: rgba(34, 12, 63, 0.45);
+  --midnight-purple-accent-bg: rgba(34, 12, 63, 0.35);
+  --midnight-purple-border: rgba(203, 181, 232, 0.25);
 
-  /* C. Midnight Purple (Deep, dark purple with blue undertone) */
-  --midnight-purple-deep: #160F26;
-  --midnight-purple-base: #30204F;
-  --midnight-purple-rich: #3D2963;
-  --midnight-purple-luminous: #4E347D;
-  --midnight-purple-glow: rgba(48, 32, 79, 0.35);
-  --midnight-purple-accent-bg: rgba(48, 32, 79, 0.18);
-  --midnight-purple-border: rgba(78, 52, 125, 0.35);
-
-  /* D. Purple Rose & Complementary Accents */
-  --rose-accent-base: #694A83;
-  --rose-accent-light: #8E69AF;
-  --rose-accent-soft: #A985C7;
-  --rose-accent-deep: #4D3363;
-  --rose-accent-glow: rgba(105, 74, 131, 0.28);
-
-  /* Semantic UI Tokens mapped to cohesive palette */
-  --bg-primary: var(--chrome-black-deep);
-  --bg-secondary: var(--chrome-black-base);
-  --bg-card: var(--chrome-black-surface);
-  --bg-card-gradient: var(--chrome-gradient-card);
-  --bg-card-subtle: #191B1F;
-  --bg-pill: var(--cloud-grey-base);
-  --bg-pill-active: linear-gradient(90deg, rgba(48, 32, 79, 0.16) 0%, rgba(37, 39, 43, 0.1) 60%, rgba(255, 255, 255, 0.95) 100%);
-
+  /* High-Contrast Typography & Text Tokens */
   --text-primary: #FFFFFF;
-  --text-cloud: var(--cloud-grey-base);
-  --text-secondary: rgba(217, 221, 224, 0.82);
-  --text-muted: rgba(217, 221, 224, 0.52);
-  --text-purple-highlight: #C5AEE3;
-  --text-dark: #141619;
-  --text-dark-muted: #4B5158;
+  --text-heading: #FAF8F5;             /* Warm off-white for crisp titles */
+  --text-body: #ECE6F3;                /* High-contrast readable off-white */
+  --text-secondary: #D2C7DF;           /* Soft lavender-grey for secondary paragraphs */
+  --text-muted: #A99CB8;               /* Subtle metadata & caption text */
+  --text-purple-highlight: #D8C3F8;    /* Luminous lavender highlight */
+  --text-dark: #160829;
+  --text-dark-muted: #4B3E5C;
 
-  --border-subtle: rgba(217, 221, 224, 0.1);
-  --border-light: rgba(217, 221, 224, 0.18);
-  --border-highlight: rgba(217, 221, 224, 0.5);
-  --border-chrome: rgba(255, 255, 255, 0.22);
-  --border-pill: rgba(37, 39, 43, 0.12);
+  /* Supporting Neutrals & Subtle Metallic / Chrome Highlights */
+  --neutral-warm-white: #FAF8F5;
+  --neutral-off-white: #F3EFEA;
+  --neutral-muted-grey: #8E8499;
+  --cloud-grey-base: #E8E2EE;
+  --cloud-grey-light: #F4F0F8;
+  --cloud-grey-soft: #FAF8FC;
+  --cloud-grey-surface: rgba(244, 240, 250, 0.94);
+  --cloud-grey-muted: #B8ACC8;
+  --cloud-grey-border: rgba(215, 185, 255, 0.18);
+  --cloud-grey-border-light: rgba(215, 185, 255, 0.35);
+
+  /* Subtle Metallic Chrome & Antique Gold Highlights (Islamic Visual Language) */
+  --chrome-metallic-sheen: linear-gradient(135deg, rgba(255, 255, 255, 0.16) 0%, rgba(203, 181, 232, 0.12) 50%, rgba(34, 12, 63, 0.35) 100%);
+  --chrome-gradient-card: linear-gradient(145deg, #2D1152 0%, #220C3F 65%, #18092E 100%);
+  --chrome-border-highlight: linear-gradient(90deg, transparent 0%, rgba(215, 185, 255, 0.3) 25%, rgba(255, 255, 255, 0.8) 50%, rgba(215, 185, 255, 0.3) 75%, transparent 100%);
+  --chrome-edge-highlight: linear-gradient(180deg, rgba(255, 255, 255, 0.45) 0%, rgba(215, 185, 255, 0.18) 60%, transparent 100%);
+  --chrome-text-sheen: linear-gradient(135deg, #FFFFFF 0%, #EDE7F4 50%, #CBB5E8 100%);
+
+  /* Islamic Visual Language: Subtle Antique Brass / Gold Details */
+  --gold-accent: #C5A059;              /* Refined antique gold for star motifs & accents */
+  --gold-glow: rgba(197, 160, 89, 0.22);
+  --gold-border: rgba(197, 160, 89, 0.35);
+  --gold-sheen: linear-gradient(135deg, #DFBE7A 0%, #C5A059 50%, #9B7832 100%);
+
+  /* Signature Botanical Purple Rose Motif */
+  --rose-accent-base: #784898;
+  --rose-accent-light: #9B63BF;
+  --rose-accent-soft: #C59FE6;
+  --rose-accent-deep: #4A1E6B;
+  --rose-accent-glow: rgba(120, 72, 152, 0.32);
+
+  /* Semantic UI Tokens Mapped to #220C3F Identity */
+  --bg-primary: #150827;               /* Atmospheric deep dark purple canvas */
+  --bg-secondary: #220C3F;             /* Dominant dark purple surface */
+  --bg-card: #2B104E;                  /* Component card surface */
+  --bg-card-gradient: linear-gradient(145deg, #2D1152 0%, #220C3F 65%, #18092E 100%);
+  --bg-card-elevated: #361560;
+  --bg-card-subtle: #1F0B38;
+  --bg-pill: rgba(244, 240, 250, 0.94);
+  --bg-pill-active: linear-gradient(90deg, rgba(34, 12, 63, 0.16) 0%, rgba(55, 22, 99, 0.12) 60%, rgba(255, 255, 255, 0.98) 100%);
+
+  --border-subtle: rgba(215, 185, 255, 0.12);
+  --border-light: rgba(215, 185, 255, 0.22);
+  --border-highlight: var(--chrome-border-highlight);
+  --border-chrome: rgba(255, 255, 255, 0.2);
+  --border-pill: rgba(34, 12, 63, 0.14);
 
   --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-arabic: 'Amiri', 'Traditional Arabic', 'Scheherazade New', serif;
@@ -180,12 +204,12 @@ input, textarea, select {
     width: calc(100% - 40px);
     max-width: 1480px;
     margin: 0 auto;
-    background: rgba(217, 221, 224, 0.88);
-    border: 1.5px solid rgba(255, 255, 255, 0.55);
+    background: rgba(244, 240, 250, 0.94);
+    border: 1.5px solid rgba(255, 255, 255, 0.65);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+    box-shadow: 0 10px 30px rgba(19, 6, 35, 0.35);
     padding: 0.75rem 2rem;
   }
 }
@@ -204,7 +228,7 @@ input, textarea, select {
   font-size: 1.05rem;
   font-weight: 600;
   letter-spacing: 0.08em;
-  color: var(--chrome-black-base);
+  color: var(--purple-primary);
   text-transform: uppercase;
 }
 
@@ -215,13 +239,13 @@ input, textarea, select {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #25272B 0%, #141619 100%);
+  background: linear-gradient(135deg, #2B104E 0%, #220C3F 100%);
   color: #FFFFFF;
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  border: 1px solid rgba(215, 185, 255, 0.35);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.04em;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 6px rgba(19, 6, 35, 0.3);
   position: relative;
 }
 
@@ -233,8 +257,8 @@ input, textarea, select {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--rose-accent-base);
-  box-shadow: 0 0 6px var(--rose-accent-soft);
+  background: var(--gold-accent);
+  box-shadow: 0 0 6px var(--gold-glow);
 }
 
 .header-nav {
@@ -251,8 +275,8 @@ input, textarea, select {
 
 .header-link {
   font-size: 0.95rem;
-  font-weight: 400;
-  color: #25272B;
+  font-weight: 500;
+  color: #220C3F;
   position: relative;
   transition: color var(--transition-fast), font-weight var(--transition-fast);
 }
@@ -260,7 +284,7 @@ input, textarea, select {
 .header-link:hover,
 .header-link.active {
   font-weight: 600;
-  color: #111111;
+  color: var(--purple-vibrant);
 }
 
 .header-link.active::after {
@@ -270,28 +294,44 @@ input, textarea, select {
   left: 0;
   right: 0;
   height: 2px;
-  background: var(--midnight-purple-base);
+  background: var(--purple-primary);
   border-radius: 2px;
+}
+
+.header-link-personal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  background: rgba(34, 12, 63, 0.08);
+  border: 1px solid rgba(34, 12, 63, 0.15);
+  transition: all var(--transition-fast);
+}
+
+.header-link-personal:hover {
+  background: rgba(34, 12, 63, 0.15);
+  border-color: var(--purple-vibrant);
 }
 
 .header-cta-btn {
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 600;
   color: #FFFFFF;
-  background: linear-gradient(135deg, #25272B 0%, #16181B 100%);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: linear-gradient(135deg, #2B104E 0%, #220C3F 100%);
+  border: 1px solid rgba(215, 185, 255, 0.3);
   padding: 0.5rem 1.25rem;
   border-radius: 9999px;
   letter-spacing: 0.03em;
   transition: all var(--transition-fast);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 8px rgba(19, 6, 35, 0.3);
 }
 
 .header-cta-btn:hover {
-  background: linear-gradient(135deg, #30204F 0%, #25272B 100%);
-  border-color: rgba(105, 74, 131, 0.45);
+  background: linear-gradient(135deg, #451B7C 0%, #361560 100%);
+  border-color: rgba(203, 181, 232, 0.6);
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(48, 32, 79, 0.35);
+  box-shadow: 0 4px 14px rgba(34, 12, 63, 0.45);
 }
 
 .mobile-menu-btn {
@@ -300,7 +340,7 @@ input, textarea, select {
   justify-content: center;
   width: 40px;
   height: 40px;
-  color: var(--chrome-black-base);
+  color: var(--purple-primary);
   background: transparent;
 }
 
@@ -314,7 +354,7 @@ input, textarea, select {
 .mobile-drawer {
   position: fixed;
   inset: 0;
-  background: rgba(13, 14, 17, 0.96);
+  background: rgba(21, 8, 39, 0.97);
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
   z-index: 100;
@@ -323,7 +363,7 @@ input, textarea, select {
   padding: 2rem 1.5rem;
   transform: translateX(100%);
   transition: transform var(--transition-normal), visibility var(--transition-normal);
-  border-left: 1px solid rgba(217, 221, 224, 0.12);
+  border-left: 1px solid rgba(215, 185, 255, 0.16);
   visibility: hidden;
   pointer-events: none;
 }
@@ -347,7 +387,7 @@ input, textarea, select {
 
 .mobile-drawer-header .monogram-badge {
   background: var(--cloud-grey-base);
-  color: var(--chrome-black-base);
+  color: var(--purple-primary);
 }
 
 .mobile-drawer-close {
@@ -366,9 +406,9 @@ input, textarea, select {
 }
 
 .mobile-drawer-link {
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-weight: 400;
-  color: rgba(217, 221, 224, 0.85);
+  color: rgba(238, 230, 248, 0.85);
   transition: color var(--transition-fast), transform var(--transition-fast);
 }
 
@@ -377,6 +417,13 @@ input, textarea, select {
   color: #FFFFFF;
   font-weight: 600;
   transform: translateX(4px);
+}
+
+.mobile-drawer-link-personal {
+  color: var(--purple-soft);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 /* --- Hero Section --- */
@@ -414,11 +461,11 @@ input, textarea, select {
   filter: contrast(1.08) brightness(0.88);
 }
 
-/* Metallic dark vignettes and layered overlays with subtle midnight-purple undertone */
+/* Atmospheric dark purple vignettes with subtle #220C3F gradation */
 .hero-overlay-left {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, #0D0E11 0%, #0D0E11 35%, rgba(13, 14, 17, 0.8) 60%, rgba(13, 14, 17, 0.25) 100%);
+  background: linear-gradient(90deg, #150827 0%, #150827 35%, rgba(21, 8, 39, 0.85) 60%, rgba(34, 12, 63, 0.25) 100%);
   z-index: 2;
 }
 
@@ -428,7 +475,7 @@ input, textarea, select {
   right: 0;
   bottom: 0;
   height: 38%;
-  background: linear-gradient(180deg, transparent 0%, rgba(13, 14, 17, 0.85) 60%, #0D0E11 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(21, 8, 39, 0.88) 60%, #150827 100%);
   z-index: 3;
 }
 
@@ -453,17 +500,17 @@ input, textarea, select {
   }
 }
 
-/* Frosted Chrome Glass Quote Card */
+/* Frosted Dark Purple Quote Card (#220C3F Base) */
 .hero-quote-card {
   position: relative;
   max-width: 580px;
-  background: rgba(26, 28, 33, 0.72);
-  border: 1px solid rgba(217, 221, 224, 0.16);
+  background: rgba(34, 12, 63, 0.82);
+  border: 1px solid rgba(215, 185, 255, 0.2);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border-radius: 28px;
   padding: 2.75rem 2.5rem;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.75), 0 0 25px rgba(48, 32, 79, 0.15);
+  box-shadow: 0 25px 50px -12px rgba(10, 3, 20, 0.85), 0 0 30px rgba(34, 12, 63, 0.45);
   overflow: hidden;
 }
 
@@ -620,8 +667,8 @@ input, textarea, select {
   background: var(--cloud-grey-base);
   border-radius: 9999px;
   padding: 0.45rem 0.6rem;
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.38);
-  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 10px 35px rgba(19, 6, 35, 0.38);
+  border: 1.5px solid rgba(255, 255, 255, 0.65);
   display: flex;
   align-items: center;
   gap: 0.4rem;
@@ -641,9 +688,9 @@ input, textarea, select {
   gap: 0.5rem;
   padding: 0.45rem 0.9rem;
   border-radius: 9999px;
-  color: var(--chrome-black-base);
+  color: var(--purple-primary);
   font-size: 0.86rem;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0.02em;
   transition: all 0.25s ease;
   white-space: nowrap;
@@ -657,7 +704,7 @@ input, textarea, select {
 }
 
 .subnav-btn:hover {
-  color: #000000;
+  color: var(--purple-vibrant);
 }
 
 .subnav-btn .btn-icon-wrap {
@@ -673,21 +720,21 @@ input, textarea, select {
 
 .subnav-btn.active {
   background: var(--bg-pill-active);
-  color: var(--chrome-black-base);
+  color: var(--purple-primary);
   font-weight: 600;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(34, 12, 63, 0.12);
 }
 
 .subnav-btn.active .btn-icon-wrap {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: #FFFFFF;
-  color: var(--midnight-purple-base);
+  background: var(--purple-primary);
+  color: #FFFFFF;
   opacity: 1;
   transform: scale(1);
   margin-right: 0.25rem;
-  box-shadow: 0 2px 6px rgba(48, 32, 79, 0.25);
+  box-shadow: 0 2px 6px rgba(34, 12, 63, 0.35);
 }
 
 /* Mobile Subnav Dropdown for small viewports */
@@ -707,11 +754,11 @@ input, textarea, select {
   padding: 0.65rem 1.25rem;
   background: var(--cloud-grey-base);
   border-radius: 9999px;
-  color: var(--chrome-black-base);
+  color: var(--purple-primary);
   font-size: 0.9rem;
   font-weight: 500;
-  border: 1.5px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  border: 1.5px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 8px 24px rgba(19, 6, 35, 0.35);
 }
 
 .mobile-subnav-trigger .active-label {
@@ -735,13 +782,13 @@ input, textarea, select {
   right: 0;
   background: var(--cloud-grey-light);
   border-radius: 20px;
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 12px 36px rgba(19, 6, 35, 0.4);
   padding: 0.5rem;
   display: none;
   flex-direction: column;
   gap: 0.25rem;
   z-index: 50;
-  border: 1.5px solid rgba(255, 255, 255, 0.65);
+  border: 1.5px solid rgba(255, 255, 255, 0.75);
 }
 
 .mobile-subnav-dropdown.open .mobile-subnav-menu {
@@ -754,7 +801,7 @@ input, textarea, select {
   gap: 0.75rem;
   padding: 0.6rem 1rem;
   border-radius: 9999px;
-  color: var(--chrome-black-base);
+  color: var(--purple-primary);
   font-size: 0.88rem;
   text-align: left;
   transition: background 0.15s ease;
@@ -762,8 +809,8 @@ input, textarea, select {
 
 .mobile-menu-item:hover,
 .mobile-menu-item.active {
-  background: rgba(48, 32, 79, 0.12);
-  color: var(--midnight-purple-base);
+  background: rgba(34, 12, 63, 0.12);
+  color: var(--purple-primary);
   font-weight: 600;
 }
 
@@ -834,9 +881,9 @@ input, textarea, select {
   aspect-ratio: 3 / 4;
   border-radius: 28px;
   overflow: hidden;
-  border: 1px solid rgba(217, 221, 224, 0.18);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.65), 0 0 20px rgba(48, 32, 79, 0.15);
-  background: var(--chrome-black-base);
+  border: 1px solid rgba(215, 185, 255, 0.22);
+  box-shadow: 0 20px 40px rgba(19, 6, 35, 0.65), 0 0 25px rgba(34, 12, 63, 0.35);
+  background: var(--bg-card);
 }
 
 .about-portrait-img {
@@ -892,7 +939,7 @@ input, textarea, select {
   font-size: 0.95rem;
   font-weight: 300;
   line-height: 1.8;
-  color: rgba(217, 221, 224, 0.9);
+  color: var(--text-body);
 }
 
 @media (min-width: 768px) {
@@ -901,12 +948,12 @@ input, textarea, select {
   }
 }
 
-/* Divider with centered metallic chrome glow & purple rose tint */
+/* Divider with centered metallic chrome glow & gold accent */
 .divider-glow {
   position: relative;
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(217, 221, 224, 0.4) 35%, var(--rose-accent-base) 50%, rgba(217, 221, 224, 0.4) 65%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(215, 185, 255, 0.3) 30%, var(--gold-accent) 50%, rgba(215, 185, 255, 0.3) 70%, transparent 100%);
   margin: 2.5rem 0;
 }
 
@@ -947,17 +994,15 @@ input, textarea, select {
 
 .marquee-item:hover {
   color: #FFFFFF;
-  text-shadow: 0 0 12px rgba(105, 74, 131, 0.45);
+  text-shadow: 0 0 12px rgba(110, 48, 191, 0.45);
 }
 
 .marquee-dot {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--rose-accent-base);
-  box-shadow: 0 0 6px var(--rose-accent-light);
-}
-  background: rgba(255, 255, 255, 0.3);
+  background: var(--gold-accent);
+  box-shadow: 0 0 6px var(--gold-glow);
 }
 
 /* --- Experience Section --- */
@@ -978,14 +1023,15 @@ input, textarea, select {
   gap: 2rem;
 }
 
-/* Experience Card — Recreating Reference Card Aesthetic with Chrome Black */
+/* Experience Card — Dark Purple #220C3F Base with Chrome Sheen */
 .experience-card {
   position: relative;
   background: var(--bg-card-gradient);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid rgba(215, 185, 255, 0.16);
   border-radius: 28px;
   padding: 2.25rem 2rem;
   overflow: hidden;
+  box-shadow: 0 20px 45px rgba(19, 6, 35, 0.65), 0 0 25px rgba(34, 12, 63, 0.25);
   transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
 }
 
@@ -996,9 +1042,9 @@ input, textarea, select {
 }
 
 .experience-card:hover {
-  border-color: rgba(217, 221, 224, 0.32);
+  border-color: rgba(215, 185, 255, 0.35);
   transform: translateY(-2px);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.65), 0 0 20px rgba(48, 32, 79, 0.2);
+  box-shadow: 0 25px 50px rgba(19, 6, 35, 0.75), 0 0 35px rgba(34, 12, 63, 0.4);
 }
 
 /* Chrome metallic reflection border */
@@ -1047,8 +1093,8 @@ input, textarea, select {
   gap: 0.45rem;
   padding: 0.35rem 0.85rem;
   border-radius: 9999px;
-  background: rgba(37, 39, 43, 0.75);
-  border: 1px solid rgba(217, 221, 224, 0.16);
+  background: rgba(34, 12, 63, 0.65);
+  border: 1px solid rgba(215, 185, 255, 0.2);
   font-size: 0.8rem;
   color: var(--cloud-grey-base);
   letter-spacing: 0.03em;
@@ -1057,8 +1103,8 @@ input, textarea, select {
 }
 
 .period-badge.current {
-  background: rgba(16, 185, 129, 0.12);
-  border-color: rgba(16, 185, 129, 0.4);
+  background: rgba(16, 185, 129, 0.15);
+  border-color: rgba(16, 185, 129, 0.45);
   color: #34d399;
 }
 
@@ -1091,7 +1137,7 @@ input, textarea, select {
   font-size: 0.94rem;
   font-weight: 300;
   line-height: 1.7;
-  color: rgba(217, 221, 224, 0.85);
+  color: var(--text-body);
 }
 
 .experience-responsibilities li::before {
@@ -1102,7 +1148,8 @@ input, textarea, select {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--rose-accent-base);
+  background: var(--purple-vibrant);
+  box-shadow: 0 0 5px var(--purple-vibrant);
 }
 
 .skills-applied-wrap {
@@ -1110,7 +1157,7 @@ input, textarea, select {
   flex-wrap: wrap;
   gap: 0.5rem;
   padding-top: 1.25rem;
-  border-top: 1px solid rgba(217, 221, 224, 0.08);
+  border-top: 1px solid rgba(215, 185, 255, 0.1);
 }
 
 .skill-tag {
@@ -1118,8 +1165,8 @@ input, textarea, select {
   font-weight: 400;
   letter-spacing: 0.04em;
   color: var(--cloud-grey-base);
-  background: rgba(26, 28, 33, 0.65);
-  border: 1px solid rgba(217, 221, 224, 0.12);
+  background: rgba(34, 12, 63, 0.55);
+  border: 1px solid rgba(215, 185, 255, 0.16);
   padding: 0.25rem 0.65rem;
   border-radius: 9999px;
   text-transform: uppercase;
@@ -1127,9 +1174,9 @@ input, textarea, select {
 }
 
 .skill-tag:hover {
-  border-color: var(--rose-accent-base);
+  border-color: var(--purple-soft);
   color: #FFFFFF;
-  background: rgba(48, 32, 79, 0.35);
+  background: rgba(110, 48, 191, 0.35);
 }
 
 /* --- Life Mission / Professional Philosophy Section --- */
@@ -1141,12 +1188,13 @@ input, textarea, select {
 
 .philosophy-box {
   position: relative;
-  background: var(--chrome-black-base);
-  border: 1px solid var(--border-subtle);
+  background: var(--bg-card);
+  border: 1px solid rgba(215, 185, 255, 0.16);
   border-radius: 32px;
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr;
+  box-shadow: 0 20px 50px rgba(19, 6, 35, 0.7);
 }
 
 @media (min-width: 1024px) {
@@ -1158,8 +1206,8 @@ input, textarea, select {
 
 .philosophy-left-col {
   position: relative;
-  background: linear-gradient(145deg, #25272B 0%, #1A1C20 50%, #201636 100%);
-  border-bottom: 1px solid var(--border-subtle);
+  background: linear-gradient(145deg, #2D1152 0%, #220C3F 60%, #160829 100%);
+  border-bottom: 1px solid rgba(215, 185, 255, 0.12);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1172,7 +1220,7 @@ input, textarea, select {
 @media (min-width: 1024px) {
   .philosophy-left-col {
     border-bottom: none;
-    border-right: 1px solid var(--border-subtle);
+    border-right: 1px solid rgba(215, 185, 255, 0.12);
     padding: 4rem 2.5rem;
   }
 }
@@ -1183,7 +1231,7 @@ input, textarea, select {
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.04;
+  opacity: 0.05;
   pointer-events: none;
 }
 
@@ -1217,7 +1265,7 @@ input, textarea, select {
   font-size: 0.82rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: var(--rose-accent-light);
+  color: var(--purple-soft);
 }
 
 .philosophy-right-col {
@@ -1226,6 +1274,7 @@ input, textarea, select {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background: rgba(34, 12, 63, 0.4);
 }
 
 @media (min-width: 768px) {
@@ -1247,7 +1296,7 @@ input, textarea, select {
   color: #FFFFFF;
   margin-bottom: 2rem;
   letter-spacing: 0.01em;
-  border-left: 2px solid var(--rose-accent-base);
+  border-left: 2px solid var(--gold-accent);
   padding-left: 1.5rem;
 }
 
@@ -1271,8 +1320,8 @@ input, textarea, select {
 }
 
 .philosophy-pillar {
-  background: rgba(37, 39, 43, 0.45);
-  border: 1px solid rgba(217, 221, 224, 0.12);
+  background: rgba(34, 12, 63, 0.55);
+  border: 1px solid rgba(215, 185, 255, 0.14);
   border-radius: 20px;
   padding: 1.5rem;
   transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
@@ -1280,15 +1329,15 @@ input, textarea, select {
 
 .philosophy-pillar:hover {
   transform: translateY(-2px);
-  border-color: var(--rose-accent-base);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35), 0 0 16px rgba(48, 32, 79, 0.25);
+  border-color: var(--purple-soft);
+  box-shadow: 0 10px 25px rgba(19, 6, 35, 0.5), 0 0 16px rgba(110, 48, 191, 0.25);
 }
 
 .pillar-number {
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.1em;
-  color: var(--rose-accent-light);
+  color: var(--purple-soft);
   margin-bottom: 0.6rem;
 }
 
@@ -1303,98 +1352,104 @@ input, textarea, select {
   font-size: 0.88rem;
   font-weight: 300;
   line-height: 1.65;
-  color: rgba(217, 221, 224, 0.82);
+  color: var(--text-body);
 }
 
 /* ==========================================================================
-   Quran Journey Section (A Lifelong Connection)
-   Dedicated Spiritual Dimension & Early Recitation Milestone
+   Islamic & Arabic-Inspired Visual Language Components
+   Refined Arabesque Motifs, 8-Pointed Star (Rub el Hizb), and Architectural Frames
    ========================================================================== */
-.quran-section {
+
+/* Symmetric Arabesque Section Divider with 8-Pointed Star Motif */
+.arabesque-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 520px;
+  margin: 2.5rem auto;
+  color: var(--gold-accent);
+}
+
+.arabesque-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(197, 160, 89, 0.45) 50%, rgba(215, 185, 255, 0.2) 100%);
+}
+
+.arabesque-divider .arabesque-line:first-child {
+  background: linear-gradient(90deg, transparent 0%, rgba(215, 185, 255, 0.2) 50%, rgba(197, 160, 89, 0.45) 100%);
+}
+
+.arabesque-motif {
+  font-size: 1.15rem;
+  line-height: 1;
+  color: var(--gold-accent);
+  text-shadow: 0 0 10px var(--gold-glow);
+  transform: translateY(-1px);
+}
+
+/* Rub el Hizb (8-Pointed Star) Tag Badge */
+.rub-el-hizb-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.95rem;
+  border-radius: 9999px;
+  background: rgba(34, 12, 63, 0.65);
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--gold-accent);
+  text-transform: uppercase;
+}
+
+.rub-el-hizb {
+  font-size: 0.95rem;
+  color: var(--gold-accent);
+}
+
+/* ==========================================================================
+   Personal Dimension Discovery Bridge Card (On Professional Homepage)
+   Subtle, Dignified Discovery Linking to the Dedicated Personal Page
+   ========================================================================== */
+.personal-bridge-section {
   position: relative;
-  background: radial-gradient(circle at 85% 15%, rgba(48, 32, 79, 0.35) 0%, transparent 60%),
-              radial-gradient(circle at 15% 85%, rgba(48, 32, 79, 0.22) 0%, transparent 55%),
-              var(--chrome-black-deep);
+  padding: 4rem 0;
+  background: radial-gradient(circle at 50% 50%, rgba(34, 12, 63, 0.45) 0%, transparent 75%),
+              var(--bg-primary);
   overflow: hidden;
-  border-top: 1px solid rgba(217, 221, 224, 0.08);
-  border-bottom: 1px solid rgba(217, 221, 224, 0.08);
 }
 
-.quran-ambient-glow {
-  position: absolute;
-  pointer-events: none;
-  border-radius: 50%;
-  filter: blur(80px);
-  z-index: 1;
-}
-
-.quran-glow-top {
-  top: -100px;
-  right: 10%;
-  width: 450px;
-  height: 450px;
-  background: radial-gradient(circle, rgba(48, 32, 79, 0.35) 0%, rgba(105, 74, 131, 0.15) 50%, transparent 70%);
-}
-
-.quran-glow-bottom {
-  bottom: -80px;
-  left: 5%;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(48, 32, 79, 0.28) 0%, transparent 70%);
-}
-
-.quran-container {
-  position: relative;
-  z-index: 10;
-  max-width: 1200px;
+.bridge-container {
+  max-width: 1080px;
   margin: 0 auto;
 }
 
-.quran-header {
-  text-align: center;
-  margin-bottom: 3.5rem;
-}
-
-.quran-eyebrow {
-  color: var(--rose-accent-light);
-  letter-spacing: 0.18em;
-}
-
-.quran-title {
-  background: var(--chrome-text-sheen);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 1rem;
-}
-
-.quran-intro-desc {
-  margin: 0 auto;
-  color: var(--text-secondary);
-}
-
-/* Centerpiece Arabic Calligraphy Verse Card */
-.quran-verse-card {
+.personal-bridge-card {
   position: relative;
-  background: linear-gradient(140deg, rgba(37, 39, 43, 0.78) 0%, rgba(26, 27, 31, 0.9) 50%, rgba(48, 32, 79, 0.45) 100%);
-  border: 1px solid rgba(217, 221, 224, 0.2);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  background: linear-gradient(145deg, #2D1152 0%, #220C3F 55%, #18092E 100%);
+  border: 1px solid rgba(215, 185, 255, 0.22);
   border-radius: 32px;
   padding: 3rem 2.25rem;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65), 0 0 35px rgba(48, 32, 79, 0.25);
-  margin-bottom: 3.5rem;
+  box-shadow: 0 25px 60px rgba(19, 6, 35, 0.75), 0 0 35px rgba(34, 12, 63, 0.35);
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 2.5rem;
   overflow: hidden;
-  text-align: center;
 }
 
-@media (min-width: 768px) {
-  .quran-verse-card {
-    padding: 3.75rem 3.5rem;
+@media (min-width: 900px) {
+  .personal-bridge-card {
+    grid-template-columns: 1.35fr 0.65fr;
+    padding: 3.5rem 3.5rem;
   }
 }
 
-.quran-verse-card::before {
+.personal-bridge-card::before {
   content: "";
   position: absolute;
   top: 0;
@@ -1404,48 +1459,799 @@ input, textarea, select {
   background: var(--chrome-border-highlight);
 }
 
-.verse-card-watermark {
+.bridge-watermark {
   position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.045;
-  color: var(--cloud-grey-base);
+  right: -40px;
+  bottom: -40px;
+  width: 320px;
+  height: 320px;
+  opacity: 0.04;
+  color: #FFFFFF;
   pointer-events: none;
 }
 
-.verse-card-watermark svg {
-  width: 320px;
-  height: 320px;
+.bridge-watermark svg {
+  width: 100%;
+  height: 100%;
 }
 
-.verse-content-wrap {
+.bridge-content {
   position: relative;
   z-index: 2;
-  max-width: 860px;
-  margin: 0 auto;
 }
 
-.verse-badge-row {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1.75rem;
+.bridge-tag-row {
+  margin-bottom: 1.25rem;
 }
 
-.verse-quranic-badge {
+.bridge-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.4rem 1.15rem;
+  padding: 0.35rem 0.95rem;
   border-radius: 9999px;
-  background: rgba(48, 32, 79, 0.5);
-  border: 1px solid rgba(105, 74, 131, 0.45);
-  font-size: 0.82rem;
+  background: rgba(34, 12, 63, 0.75);
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  font-size: 0.78rem;
   font-weight: 500;
   letter-spacing: 0.08em;
-  color: var(--rose-accent-soft);
+  color: var(--gold-accent);
   text-transform: uppercase;
+}
+
+.bridge-title {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.15rem;
+  line-height: 1.3;
+}
+
+@media (min-width: 768px) {
+  .bridge-title {
+    font-size: 2.1rem;
+  }
+}
+
+.bridge-description {
+  font-size: 0.98rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--text-body);
+  margin-bottom: 2rem;
+  max-width: 620px;
+}
+
+.bridge-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.bridge-explore-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1.85rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #451B7C 0%, #361560 50%, #220C3F 100%);
+  color: #FFFFFF;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  border: 1px solid rgba(215, 185, 255, 0.35);
+  box-shadow: 0 8px 24px rgba(19, 6, 35, 0.5), 0 0 18px rgba(110, 48, 191, 0.35);
+  transition: all var(--transition-fast);
+}
+
+.bridge-explore-btn:hover {
+  background: linear-gradient(135deg, #6E30BF 0%, #451B7C 50%, #2B104E 100%);
+  border-color: rgba(215, 185, 255, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(19, 6, 35, 0.65), 0 0 25px rgba(110, 48, 191, 0.5);
+  color: #FFFFFF;
+}
+
+.bridge-motif-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 240px;
+  margin: 0 auto;
+}
+
+.bridge-rose-img {
+  width: 100%;
+  height: auto;
+  max-height: 220px;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 30px rgba(19, 6, 35, 0.8));
+  transition: transform var(--transition-smooth);
+}
+
+.personal-bridge-card:hover .bridge-rose-img {
+  transform: scale(1.05) rotate(2deg);
+}
+
+/* ==========================================================================
+   Dedicated Personal Journey Page Styles (personal-journey.html)
+   Atmospheric, Editorial Presentation of Quran Recitation Foundations
+   ========================================================================= */
+.pj-body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  position: relative;
+  overflow-x: hidden;
+}
+
+.pj-header-wrapper {
+  position: sticky;
+  top: 1rem;
+  z-index: 60;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+@media (min-width: 1024px) {
+  .pj-header-wrapper {
+    top: 1.25rem;
+    padding: 0;
+  }
+}
+
+.pj-header-pill {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  background: rgba(244, 240, 250, 0.94);
+  border: 1.5px solid rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(19, 6, 35, 0.35);
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .pj-header-pill {
+    padding: 0.75rem 2rem;
+  }
+}
+
+.return-portfolio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #2B104E 0%, #220C3F 100%);
+  border: 1px solid rgba(215, 185, 255, 0.3);
+  padding: 0.45rem 1.15rem;
+  border-radius: 9999px;
+  transition: all var(--transition-fast);
+  box-shadow: 0 2px 8px rgba(19, 6, 35, 0.3);
+}
+
+.return-portfolio-btn:hover {
+  background: linear-gradient(135deg, #451B7C 0%, #361560 100%);
+  border-color: rgba(203, 181, 232, 0.6);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(34, 12, 63, 0.45);
+  color: #FFFFFF;
+}
+
+/* Striking Opening Hero Section */
+.pj-hero-section {
+  position: relative;
+  padding: 5rem 0 4rem;
+  text-align: center;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 15%, rgba(43, 16, 78, 0.5) 0%, transparent 65%),
+              radial-gradient(circle at 85% 85%, rgba(34, 12, 63, 0.35) 0%, transparent 60%),
+              var(--bg-primary);
+}
+
+@media (min-width: 768px) {
+  .pj-hero-section {
+    padding: 7rem 0 5rem;
+  }
+}
+
+/* Classical Bismillah Calligraphy */
+.bismillah-calligraphy {
+  font-family: var(--font-arabic);
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 2;
+  color: #FFFFFF;
+  text-shadow: 0 4px 20px rgba(110, 48, 191, 0.5), 0 0 10px rgba(197, 160, 89, 0.35);
+  margin-bottom: 1.5rem;
+  direction: rtl;
+  unicode-bidi: isolate;
+  text-rendering: optimizeLegibility;
+  padding: 0.25rem 0;
+}
+
+@media (max-width: 767px) {
+  .bismillah-calligraphy {
+    font-size: 1.7rem;
+    line-height: 1.9;
+  }
+}
+
+.pj-hero-title {
+  font-size: 2.35rem;
+  font-weight: 500;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .pj-hero-title {
+    font-size: 3.1rem;
+  }
+}
+
+.pj-hero-subtitle {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  max-width: 720px;
+  margin: 0 auto 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .pj-hero-subtitle {
+    font-size: 1.15rem;
+  }
+}
+
+/* Centerpiece Islamic Arch / Mihrab Verse Card (Surah Al-Qamar 54:17) */
+.pj-verse-card {
+  position: relative;
+  background: linear-gradient(145deg, #2D1152 0%, #220C3F 55%, #18092E 100%);
+  border: 1px solid rgba(215, 185, 255, 0.25);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: 36px;
+  padding: 3.5rem 2.25rem;
+  box-shadow: 0 30px 70px rgba(19, 6, 35, 0.8), 0 0 40px rgba(34, 12, 63, 0.45);
+  margin: 0 auto 4rem;
+  max-width: 980px;
+  text-align: center;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .pj-verse-card {
+    padding: 4.5rem 4rem;
+  }
+}
+
+/* Islamic Arch silhouette outline overlay */
+.pj-verse-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--chrome-border-highlight);
+}
+
+.pj-verse-arch-frame {
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  border-radius: 28px;
+  pointer-events: none;
+}
+
+.pj-arabic-verse {
+  font-family: var(--font-arabic);
+  font-size: 2.35rem;
+  font-weight: 700;
+  line-height: 2.2;
+  color: #FFFFFF;
+  text-shadow: 0 4px 20px rgba(34, 12, 63, 0.8), 0 0 15px rgba(110, 48, 191, 0.5);
+  margin-bottom: 1.75rem;
+  direction: rtl;
+  unicode-bidi: isolate;
+  text-rendering: optimizeLegibility;
+  padding: 0.5rem 0;
+}
+
+@media (max-width: 767px) {
+  .pj-arabic-verse {
+    font-size: 1.75rem;
+    line-height: 2.1;
+  }
+}
+
+.pj-verse-translation {
+  font-size: 1.12rem;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.8;
+  color: var(--neutral-warm-white);
+  letter-spacing: 0.01em;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .pj-verse-translation {
+    font-size: 1.25rem;
+  }
+}
+
+/* Editorial Two-Column Grid: Narrative & Milestone Highlight */
+.pj-editorial-section {
+  padding: 3rem 0 5rem;
+  position: relative;
+}
+
+.pj-editorial-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: stretch;
+}
+
+@media (min-width: 1024px) {
+  .pj-editorial-grid {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 3.5rem;
+  }
+}
+
+/* Narrative Card */
+.pj-narrative-card {
+  position: relative;
+  background: var(--bg-card-gradient);
+  border: 1px solid rgba(215, 185, 255, 0.16);
+  border-radius: 28px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 20px 45px rgba(19, 6, 35, 0.65);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .pj-narrative-card {
+    padding: 3rem 2.75rem;
+  }
+}
+
+.pj-narrative-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: var(--chrome-border-highlight);
+}
+
+.pj-narrative-heading {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #FFFFFF;
+  margin-bottom: 1.75rem;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 768px) {
+  .pj-narrative-heading {
+    font-size: 1.85rem;
+  }
+}
+
+.pj-quote-lead {
+  font-size: 1.02rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #FFFFFF;
+  border-left: 2px solid var(--gold-accent);
+  padding: 1rem 1.25rem;
+  font-style: italic;
+  background: rgba(34, 12, 63, 0.45);
+  border-radius: 0 16px 16px 0;
+  margin-bottom: 2rem;
+}
+
+.pj-narrative-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  font-size: 0.96rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--text-body);
+}
+
+/* Visual Highlight: Under-10 30-Juz Hifz Milestone Card */
+.pj-milestone-highlight {
+  position: relative;
+  background: linear-gradient(145deg, #361560 0%, #2B104E 50%, #1F0B38 100%);
+  border: 1.5px solid rgba(197, 160, 89, 0.45);
+  border-radius: 28px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 25px 55px rgba(19, 6, 35, 0.7), 0 0 30px rgba(197, 160, 89, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.75rem;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .pj-milestone-highlight {
+    padding: 3rem 2.5rem;
+  }
+}
+
+.pj-milestone-highlight::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--gold-accent) 50%, transparent 100%);
+}
+
+.pj-milestone-watermark {
+  position: absolute;
+  right: -30px;
+  top: -30px;
+  width: 200px;
+  height: 200px;
+  opacity: 0.05;
+  color: var(--gold-accent);
+  pointer-events: none;
+}
+
+.pj-milestone-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.pj-milestone-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #451B7C 0%, #220C3F 100%);
+  border: 1px solid rgba(197, 160, 89, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-accent);
+  box-shadow: 0 4px 14px rgba(19, 6, 35, 0.4);
+  flex-shrink: 0;
+}
+
+.pj-milestone-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .pj-milestone-title {
+    font-size: 1.55rem;
+  }
+}
+
+.pj-milestone-competition {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--gold-accent);
+  margin-bottom: 0.85rem;
+}
+
+.pj-milestone-facts-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pj-milestone-facts-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--text-body);
+}
+
+.pj-milestone-facts-list li::before {
+  content: "۞";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0.85rem;
+  color: var(--gold-accent);
+}
+
+.pj-milestone-note {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: rgba(21, 8, 39, 0.45);
+  border-radius: 14px;
+  border-left: 2px solid var(--gold-accent);
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--text-muted);
+  text-align: left;
+}
+
+/* Purple Rose Showcase Card on Personal Journey Page */
+.pj-rose-card {
+  position: relative;
+  background: linear-gradient(145deg, #2D1152 0%, #220C3F 60%, #18092E 100%);
+  border: 1px solid rgba(215, 185, 255, 0.18);
+  border-radius: 28px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 20px 45px rgba(19, 6, 35, 0.65);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  margin-top: 3.5rem;
+}
+
+@media (min-width: 768px) {
+  .pj-rose-card {
+    padding: 3rem 2.5rem;
+  }
+}
+
+.pj-rose-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: var(--chrome-border-highlight);
+}
+
+.pj-rose-frame {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem auto;
+}
+
+.pj-rose-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 35px rgba(16, 6, 30, 0.85));
+  transition: transform var(--transition-smooth);
+}
+
+.pj-rose-card:hover .pj-rose-img {
+  transform: scale(1.05) rotate(2deg);
+}
+
+.pj-rose-title {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #FFFFFF;
+  margin: 1rem 0 0.5rem;
+}
+
+.pj-rose-caption {
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--text-body);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Values & Character Reflections Section */
+.pj-values-section {
+  padding: 4rem 0;
+  position: relative;
+}
+
+.pj-values-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .pj-values-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.pj-value-card {
+  background: rgba(34, 12, 63, 0.55);
+  border: 1px solid rgba(215, 185, 255, 0.15);
+  border-radius: 22px;
+  padding: 2rem 1.75rem;
+  transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.pj-value-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--purple-soft);
+  box-shadow: 0 15px 30px rgba(19, 6, 35, 0.55), 0 0 18px rgba(110, 48, 191, 0.3);
+}
+
+.pj-value-num {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--gold-accent);
+  margin-bottom: 0.75rem;
+}
+
+.pj-value-title {
+  font-size: 1.18rem;
+  font-weight: 500;
+  color: #FFFFFF;
+  margin-bottom: 0.75rem;
+}
+
+.pj-value-desc {
+  font-size: 0.92rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--text-body);
+}
+
+/* Return to Professional Portfolio Bridge Section */
+.pj-return-section {
+  padding: 4rem 0 6rem;
+  text-align: center;
+}
+
+.pj-return-card {
+  max-width: 860px;
+  margin: 0 auto;
+  background: linear-gradient(145deg, #2D1152 0%, #220C3F 60%, #18092E 100%);
+  border: 1px solid rgba(215, 185, 255, 0.25);
+  border-radius: 32px;
+  padding: 3.5rem 2.5rem;
+  box-shadow: 0 25px 60px rgba(19, 6, 35, 0.75);
+  position: relative;
+  overflow: hidden;
+}
+
+.pj-return-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: var(--chrome-border-highlight);
+}
+
+.pj-return-title {
+  font-size: 1.85rem;
+  font-weight: 500;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .pj-return-title {
+    font-size: 2.2rem;
+  }
+}
+
+.pj-return-desc {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--text-body);
+  max-width: 620px;
+  margin: 0 auto 2.25rem;
+}
+
+.pj-return-btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.pj-return-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.95rem 2.25rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #451B7C 0%, #361560 50%, #220C3F 100%);
+  color: #FFFFFF;
+  font-size: 0.96rem;
+  font-weight: 600;
+  border: 1px solid rgba(215, 185, 255, 0.4);
+  box-shadow: 0 8px 24px rgba(19, 6, 35, 0.5), 0 0 20px rgba(110, 48, 191, 0.4);
+  transition: all var(--transition-fast);
+}
+
+.pj-return-primary-btn:hover {
+  background: linear-gradient(135deg, #6E30BF 0%, #451B7C 50%, #2B104E 100%);
+  border-color: rgba(215, 185, 255, 0.7);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(19, 6, 35, 0.65), 0 0 25px rgba(110, 48, 191, 0.55);
+  color: #FFFFFF;
+}
+
+.pj-return-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.95rem 1.85rem;
+  border-radius: 9999px;
+  background: rgba(34, 12, 63, 0.55);
+  color: var(--cloud-grey-base);
+  font-size: 0.92rem;
+  font-weight: 500;
+  border: 1px solid rgba(215, 185, 255, 0.2);
+  transition: all var(--transition-fast);
+}
+
+.pj-return-secondary-btn:hover {
+  background: rgba(54, 21, 96, 0.75);
+  border-color: var(--purple-soft);
+  color: #FFFFFF;
+}
+
+/* Backward-compatibility classes for existing elements if needed */
+.quran-section {
+  position: relative;
+  background: radial-gradient(circle at 85% 15%, rgba(43, 16, 78, 0.45) 0%, transparent 60%),
+              radial-gradient(circle at 15% 85%, rgba(34, 12, 63, 0.35) 0%, transparent 55%),
+              var(--bg-primary);
+  overflow: hidden;
+  border-top: 1px solid rgba(215, 185, 255, 0.1);
+  border-bottom: 1px solid rgba(215, 185, 255, 0.1);
+}
+
+.quran-verse-card {
+  position: relative;
+  background: linear-gradient(145deg, #2D1152 0%, #220C3F 55%, #18092E 100%);
+  border: 1px solid rgba(215, 185, 255, 0.25);
+  border-radius: 32px;
+  padding: 3rem 2.25rem;
+  box-shadow: 0 25px 60px rgba(19, 6, 35, 0.75), 0 0 35px rgba(34, 12, 63, 0.35);
+  margin-bottom: 3.5rem;
+  text-align: center;
+  overflow: hidden;
 }
 
 .quran-arabic-display {
@@ -1454,7 +2260,7 @@ input, textarea, select {
   font-weight: 700;
   line-height: 2.2;
   color: #FFFFFF;
-  text-shadow: 0 4px 20px rgba(48, 32, 79, 0.6), 0 1px 2px rgba(0, 0, 0, 0.8);
+  text-shadow: 0 4px 20px rgba(34, 12, 63, 0.8), 0 0 15px rgba(110, 48, 191, 0.5);
   margin-bottom: 1.5rem;
   direction: rtl;
   unicode-bidi: isolate;
@@ -1462,38 +2268,16 @@ input, textarea, select {
   padding: 0.5rem 0;
 }
 
-@media (max-width: 767px) {
-  .quran-arabic-display {
-    font-size: 1.75rem;
-    line-height: 2.1;
-  }
-}
-
-.verse-divider-line {
-  width: 140px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(217, 221, 224, 0.5) 50%, transparent 100%);
-  margin: 1.75rem auto;
-}
-
 .quran-english-translation {
   font-size: 1.12rem;
   font-weight: 300;
   font-style: italic;
   line-height: 1.8;
-  color: var(--cloud-grey-base);
-  letter-spacing: 0.01em;
+  color: var(--neutral-warm-white);
   max-width: 660px;
   margin: 0 auto;
 }
 
-@media (min-width: 768px) {
-  .quran-english-translation {
-    font-size: 1.25rem;
-  }
-}
-
-/* Editorial Grid: Narrative & Rose Art Showcase */
 .quran-editorial-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -1508,65 +2292,13 @@ input, textarea, select {
   }
 }
 
-/* Narrative Column */
 .quran-narrative-card {
   position: relative;
-  background: var(--chrome-gradient-card);
-  border: 1px solid var(--border-subtle);
+  background: var(--bg-card-gradient);
+  border: 1px solid rgba(215, 185, 255, 0.16);
   border-radius: 28px;
   padding: 2.5rem 2rem;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-@media (min-width: 768px) {
-  .quran-narrative-card {
-    padding: 3rem 2.75rem;
-  }
-}
-
-.quran-narrative-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1.5px;
-  background: var(--chrome-border-highlight);
-}
-
-.quran-narrative-eyebrow {
-  display: inline-block;
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--rose-accent-light);
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-}
-
-.quran-narrative-heading {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #FFFFFF;
-  margin-bottom: 1.75rem;
-  letter-spacing: -0.01em;
-}
-
-@media (min-width: 768px) {
-  .quran-narrative-heading {
-    font-size: 1.75rem;
-  }
-}
-
-.quran-narrative-paragraphs {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  margin-bottom: 2.25rem;
+  box-shadow: 0 20px 45px rgba(19, 6, 35, 0.65);
 }
 
 .quran-quote-lead {
@@ -1574,121 +2306,51 @@ input, textarea, select {
   font-weight: 300;
   line-height: 1.8;
   color: #FFFFFF;
-  border-left: 2px solid var(--rose-accent-base);
-  padding-left: 1.25rem;
+  border-left: 2px solid var(--gold-accent);
+  padding: 0.85rem 1rem 0.85rem 1.25rem;
   font-style: italic;
-  background: rgba(48, 32, 79, 0.18);
-  padding-top: 0.85rem;
-  padding-bottom: 0.85rem;
-  padding-right: 1rem;
+  background: rgba(34, 12, 63, 0.45);
   border-radius: 0 16px 16px 0;
 }
 
-.quran-narrative-paragraphs p {
-  font-size: 0.95rem;
-  font-weight: 300;
-  line-height: 1.8;
-  color: rgba(217, 221, 224, 0.88);
-}
-
-/* Confirmed Milestone Card */
 .quran-achievement-card {
   display: flex;
   align-items: flex-start;
   gap: 1.25rem;
-  background: linear-gradient(135deg, rgba(48, 32, 79, 0.35) 0%, rgba(37, 39, 43, 0.65) 60%, rgba(26, 27, 30, 0.85) 100%);
-  border: 1px solid rgba(105, 74, 131, 0.35);
+  background: linear-gradient(135deg, rgba(54, 21, 96, 0.5) 0%, rgba(34, 12, 63, 0.75) 100%);
+  border: 1px solid rgba(197, 160, 89, 0.35);
   border-radius: 20px;
   padding: 1.5rem 1.35rem;
   transition: all var(--transition-normal);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35), 0 0 20px rgba(48, 32, 79, 0.18);
-}
-
-.quran-achievement-card:hover {
-  border-color: var(--rose-accent-light);
-  transform: translateY(-2px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.45), 0 0 25px rgba(105, 74, 131, 0.3);
+  box-shadow: 0 10px 25px rgba(19, 6, 35, 0.5);
 }
 
 .achievement-icon-box {
   width: 48px;
   height: 48px;
   border-radius: 14px;
-  background: linear-gradient(135deg, var(--rose-accent-base) 0%, var(--midnight-purple-base) 100%);
+  background: linear-gradient(135deg, var(--gold-accent) 0%, #8E681C 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #FFFFFF;
+  color: #160829;
   flex-shrink: 0;
-  box-shadow: 0 4px 14px rgba(48, 32, 79, 0.4);
+  box-shadow: 0 4px 14px rgba(197, 160, 89, 0.3);
 }
 
-.achievement-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.achievement-tag {
-  font-size: 0.72rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--rose-accent-soft);
-  margin-bottom: 0.25rem;
-}
-
-.achievement-title {
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: #FFFFFF;
-  letter-spacing: -0.01em;
-}
-
-.achievement-subtitle {
-  font-size: 0.92rem;
-  font-weight: 500;
-  color: var(--cloud-grey-base);
-  margin-bottom: 0.5rem;
-}
-
-.achievement-details {
-  font-size: 0.84rem;
-  font-weight: 300;
-  line-height: 1.6;
-  color: rgba(217, 221, 224, 0.78);
-}
-
-/* Right Column: Purple Rose Botanical Art Showcase */
 .quran-rose-card {
   position: relative;
-  background: linear-gradient(145deg, #1E2126 0%, #16181C 50%, #201636 100%);
-  border: 1px solid rgba(217, 221, 224, 0.16);
+  background: var(--bg-card-gradient);
+  border: 1px solid rgba(215, 185, 255, 0.16);
   border-radius: 28px;
   padding: 2.5rem 2rem;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55), 0 0 30px rgba(48, 32, 79, 0.2);
+  box-shadow: 0 20px 45px rgba(19, 6, 35, 0.65);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   text-align: center;
   overflow: hidden;
-  height: 100%;
-}
-
-@media (min-width: 768px) {
-  .quran-rose-card {
-    padding: 3rem 2.5rem;
-  }
-}
-
-.quran-rose-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1.5px;
-  background: var(--chrome-border-highlight);
 }
 
 .rose-art-frame {
@@ -1708,7 +2370,7 @@ input, textarea, select {
   object-fit: contain;
   position: relative;
   z-index: 2;
-  filter: drop-shadow(0 15px 35px rgba(16, 10, 28, 0.85));
+  filter: drop-shadow(0 15px 35px rgba(16, 6, 30, 0.85));
   transition: transform var(--transition-smooth);
 }
 
@@ -1721,7 +2383,7 @@ input, textarea, select {
   width: 70%;
   height: 70%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(105, 74, 131, 0.45) 0%, rgba(48, 32, 79, 0.2) 60%, transparent 80%);
+  background: radial-gradient(circle, rgba(110, 48, 191, 0.45) 0%, rgba(34, 12, 63, 0.2) 60%, transparent 80%);
   filter: blur(25px);
   z-index: 1;
   pointer-events: none;
@@ -1734,7 +2396,7 @@ input, textarea, select {
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  border-top: 1px solid rgba(217, 221, 224, 0.1);
+  border-top: 1px solid rgba(215, 185, 255, 0.12);
   padding-top: 1.5rem;
   width: 100%;
 }
@@ -1744,7 +2406,7 @@ input, textarea, select {
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-weight: 600;
-  color: var(--rose-accent-soft);
+  color: var(--purple-soft);
 }
 
 .rose-card-title {
@@ -1757,7 +2419,7 @@ input, textarea, select {
   font-size: 0.86rem;
   font-weight: 300;
   line-height: 1.65;
-  color: rgba(217, 221, 224, 0.75);
+  color: var(--text-body);
   max-width: 360px;
 }
 
@@ -1782,11 +2444,11 @@ input, textarea, select {
 .credential-category-card {
   position: relative;
   background: var(--chrome-gradient-card);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid rgba(215, 185, 255, 0.16);
   border-radius: 28px;
   padding: 2.25rem 2rem;
   overflow: hidden;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 20px 45px rgba(19, 6, 35, 0.65), 0 0 25px rgba(34, 12, 63, 0.25);
 }
 
 @media (min-width: 768px) {
@@ -1812,7 +2474,7 @@ input, textarea, select {
   align-items: center;
   gap: 1rem;
   margin-bottom: 2rem;
-  border-bottom: 1px solid rgba(217, 221, 224, 0.1);
+  border-bottom: 1px solid rgba(215, 185, 255, 0.12);
   padding-bottom: 1.25rem;
 }
 
@@ -1820,8 +2482,8 @@ input, textarea, select {
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: linear-gradient(135deg, rgba(48, 32, 79, 0.4) 0%, rgba(37, 39, 43, 0.7) 100%);
-  border: 1px solid rgba(105, 74, 131, 0.35);
+  background: linear-gradient(135deg, rgba(54, 21, 96, 0.7) 0%, rgba(34, 12, 63, 0.9) 100%);
+  border: 1px solid rgba(215, 185, 255, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1848,18 +2510,18 @@ input, textarea, select {
 }
 
 .credential-item {
-  background: rgba(37, 39, 43, 0.45);
-  border: 1px solid rgba(217, 221, 224, 0.08);
+  background: rgba(34, 12, 63, 0.5);
+  border: 1px solid rgba(215, 185, 255, 0.12);
   border-radius: 18px;
   padding: 1.5rem;
   transition: all var(--transition-normal);
 }
 
 .credential-item:hover {
-  background: rgba(48, 32, 79, 0.22);
-  border-color: rgba(105, 74, 131, 0.35);
+  background: rgba(54, 21, 96, 0.65);
+  border-color: rgba(215, 185, 255, 0.3);
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 24px rgba(19, 6, 35, 0.5);
 }
 
 .item-top {
@@ -1878,7 +2540,7 @@ input, textarea, select {
 
 .item-year {
   font-size: 0.78rem;
-  color: var(--rose-accent-light);
+  color: var(--purple-soft);
   white-space: nowrap;
   font-weight: 500;
 }
@@ -1893,15 +2555,15 @@ input, textarea, select {
   font-size: 0.85rem;
   font-weight: 300;
   line-height: 1.65;
-  color: rgba(217, 221, 224, 0.78);
+  color: var(--text-body);
 }
 
 .score-badge {
   display: inline-block;
   padding: 0.25rem 0.65rem;
   border-radius: 9999px;
-  background: linear-gradient(135deg, rgba(48, 32, 79, 0.38) 0%, rgba(37, 39, 43, 0.6) 100%);
-  border: 1px solid rgba(105, 74, 131, 0.35);
+  background: linear-gradient(135deg, rgba(54, 21, 96, 0.6) 0%, rgba(34, 12, 63, 0.8) 100%);
+  border: 1px solid rgba(197, 160, 89, 0.35);
   font-size: 0.75rem;
   font-weight: 500;
   color: #FFFFFF;
@@ -1931,11 +2593,11 @@ input, textarea, select {
 /* Connect Form Card */
 .connect-card-form {
   position: relative;
-  background: rgba(30, 33, 38, 0.82);
-  border: 1px solid var(--border-light);
+  background: rgba(34, 12, 63, 0.82);
+  border: 1px solid rgba(215, 185, 255, 0.2);
   border-radius: 28px;
   padding: 2.25rem 2rem;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 25px rgba(48, 32, 79, 0.15);
+  box-shadow: 0 20px 50px rgba(19, 6, 35, 0.7), 0 0 30px rgba(34, 12, 63, 0.35);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   overflow: hidden;
@@ -1985,25 +2647,25 @@ input, textarea, select {
   padding: 0.95rem 1.35rem;
   border-radius: 16px;
   background: var(--cloud-grey-base);
-  border: 1.5px solid transparent;
-  color: #141619;
+  border: 1.5px solid rgba(34, 12, 63, 0.12);
+  color: var(--purple-primary);
   font-size: 0.95rem;
   transition: all var(--transition-fast);
 }
 
 .input-field::placeholder,
 .textarea-field::placeholder {
-  color: #5A626A;
+  color: #6C5E7E;
 }
 
 .input-field:focus,
 .select-field:focus,
 .textarea-field:focus {
   outline: none;
-  background: var(--cloud-grey-light);
-  border-color: var(--midnight-purple-base);
-  box-shadow: 0 0 0 3px rgba(48, 32, 79, 0.28);
-  color: #0D0E11;
+  background: #FFFFFF;
+  border-color: var(--purple-primary);
+  box-shadow: 0 0 0 3px rgba(34, 12, 63, 0.25);
+  color: #160829;
 }
 
 .select-wrap {
@@ -2022,7 +2684,7 @@ input, textarea, select {
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
-  color: #4A5158;
+  color: var(--purple-primary);
   width: 18px;
   height: 18px;
 }
@@ -2057,20 +2719,20 @@ input, textarea, select {
   width: 100%;
   padding: 1rem 2rem;
   border-radius: 20px;
-  background: linear-gradient(135deg, #2E3238 0%, #25272B 50%, #1A1C20 100%);
+  background: linear-gradient(135deg, #2B104E 0%, #220C3F 50%, #160829 100%);
   color: #FFFFFF;
   font-size: 1rem;
-  font-weight: 500;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  font-weight: 600;
+  border: 1px solid rgba(215, 185, 255, 0.3);
+  box-shadow: 0 8px 24px rgba(19, 6, 35, 0.45);
   transition: all var(--transition-fast);
 }
 
 .submit-btn:hover {
-  background: linear-gradient(135deg, #3D2963 0%, #30204F 50%, #25272B 100%);
-  border-color: rgba(105, 74, 131, 0.5);
+  background: linear-gradient(135deg, #451B7C 0%, #361560 50%, #220C3F 100%);
+  border-color: rgba(215, 185, 255, 0.55);
   transform: translateY(-1px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5), 0 0 20px rgba(48, 32, 79, 0.35);
+  box-shadow: 0 12px 28px rgba(19, 6, 35, 0.55), 0 0 20px rgba(110, 48, 191, 0.4);
 }
 
 .submit-btn:active {
@@ -2081,15 +2743,15 @@ input, textarea, select {
   margin-top: 1.75rem;
   padding: 1.25rem;
   border-radius: 18px;
-  background: rgba(26, 28, 33, 0.75);
-  border: 1px solid rgba(217, 221, 224, 0.12);
+  background: rgba(34, 12, 63, 0.6);
+  border: 1px solid rgba(215, 185, 255, 0.16);
   text-align: center;
   font-size: 0.92rem;
   color: var(--cloud-grey-base);
 }
 
 .direct-email-banner a {
-  color: var(--rose-accent-light);
+  color: var(--purple-soft);
   font-weight: 500;
   text-decoration: underline;
   text-underline-offset: 4px;
@@ -2104,7 +2766,7 @@ input, textarea, select {
 
 .connect-graphic-card {
   position: relative;
-  background: linear-gradient(145deg, #25272B 0%, #1A1C20 60%, #201636 100%);
+  background: linear-gradient(145deg, #2D1152 0%, #220C3F 60%, #160829 100%);
   border: 1px solid var(--border-subtle);
   border-radius: 28px;
   padding: 2.5rem 2rem;
@@ -2114,14 +2776,14 @@ input, textarea, select {
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 20px 45px rgba(19, 6, 35, 0.65);
 }
 
 .connect-circle-graphic {
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  border: 1.5px solid rgba(105, 74, 131, 0.35);
+  border: 1.5px solid rgba(215, 185, 255, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2134,7 +2796,7 @@ input, textarea, select {
   position: absolute;
   inset: 12px;
   border-radius: 50%;
-  border: 1px dashed rgba(217, 221, 224, 0.25);
+  border: 1px dashed rgba(215, 185, 255, 0.35);
   animation: rotateSlow 24s linear infinite;
 }
 
@@ -2143,7 +2805,7 @@ input, textarea, select {
   position: absolute;
   inset: 28px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(48, 32, 79, 0.4) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(110, 48, 191, 0.35) 0%, transparent 70%);
 }
 
 .connect-circle-graphic svg {
@@ -2154,14 +2816,14 @@ input, textarea, select {
 }
 
 .connect-channels-card {
-  background: var(--chrome-black-surface);
+  background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: 28px;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 20px 45px rgba(19, 6, 35, 0.65);
 }
 
 .channel-link-item {
@@ -2169,25 +2831,25 @@ input, textarea, select {
   align-items: center;
   gap: 1rem;
   padding: 1rem 1.25rem;
-  background: rgba(37, 39, 43, 0.45);
-  border: 1px solid rgba(217, 221, 224, 0.08);
+  background: rgba(34, 12, 63, 0.55);
+  border: 1px solid rgba(215, 185, 255, 0.12);
   border-radius: 18px;
   transition: all var(--transition-normal);
 }
 
 .channel-link-item:hover {
-  background: rgba(48, 32, 79, 0.25);
-  border-color: var(--rose-accent-base);
+  background: rgba(54, 21, 96, 0.7);
+  border-color: var(--purple-vibrant);
   transform: translateX(4px);
-  box-shadow: 0 4px 14px rgba(48, 32, 79, 0.25);
+  box-shadow: 0 4px 14px rgba(34, 12, 63, 0.35);
 }
 
 .channel-icon-wrap {
   width: 40px;
   height: 40px;
   border-radius: 12px;
-  background: rgba(48, 32, 79, 0.35);
-  border: 1px solid rgba(105, 74, 131, 0.3);
+  background: rgba(34, 12, 63, 0.75);
+  border: 1px solid rgba(215, 185, 255, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2204,7 +2866,7 @@ input, textarea, select {
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--rose-accent-soft);
+  color: var(--purple-soft);
 }
 
 .channel-value {
@@ -2215,7 +2877,7 @@ input, textarea, select {
 
 /* --- Minimal Footer --- */
 .site-footer {
-  border-top: 1px solid rgba(217, 221, 224, 0.1);
+  border-top: 1px solid rgba(215, 185, 255, 0.12);
   padding: 3rem 0;
   background-color: var(--bg-primary);
 }
@@ -2292,12 +2954,12 @@ input, textarea, select {
   height: 60px;
   border-radius: 9999px;
   background: var(--cloud-grey-base);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 30px rgba(19, 6, 35, 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all var(--transition-normal);
-  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  border: 1.5px solid rgba(255, 255, 255, 0.65);
 }
 
 .speed-dial-trigger {
@@ -2307,17 +2969,17 @@ input, textarea, select {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--chrome-black-base);
+  color: var(--purple-primary);
   background: var(--cloud-grey-base);
   z-index: 2;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 10px rgba(19, 6, 35, 0.2);
   transition: transform var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
 }
 
 .speed-dial-trigger:hover {
   transform: scale(1.06);
   background: var(--cloud-grey-light);
-  color: var(--midnight-purple-base);
+  color: var(--purple-vibrant);
 }
 
 .speed-dial-menu {
@@ -2345,21 +3007,21 @@ input, textarea, select {
   height: 48px;
   border-radius: 50%;
   background: var(--cloud-grey-base);
-  color: var(--chrome-black-base);
+  color: var(--purple-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1.5px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  border: 1.5px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 4px 14px rgba(19, 6, 35, 0.3);
   transition: all var(--transition-fast);
   position: relative;
 }
 
 .speed-dial-item:hover {
   background: var(--cloud-grey-light);
-  color: var(--midnight-purple-base);
+  color: var(--purple-vibrant);
   transform: scale(1.1);
-  box-shadow: 0 4px 16px rgba(48, 32, 79, 0.3);
+  box-shadow: 0 4px 16px rgba(34, 12, 63, 0.45);
 }
 
 .speed-dial-tooltip {
@@ -2367,8 +3029,8 @@ input, textarea, select {
   right: 58px;
   top: 50%;
   transform: translateY(-50%);
-  background: var(--chrome-black-card);
-  color: var(--cloud-grey-soft);
+  background: var(--purple-primary);
+  color: #FFFFFF;
   padding: 0.35rem 0.75rem;
   border-radius: 8px;
   font-size: 0.75rem;
@@ -2377,7 +3039,7 @@ input, textarea, select {
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.2s ease;
-  border: 1px solid rgba(105, 74, 131, 0.35);
+  border: 1px solid rgba(215, 185, 255, 0.3);
 }
 
 .speed-dial-item:hover .speed-dial-tooltip {
@@ -2391,18 +3053,36 @@ input, textarea, select {
   left: 50%;
   transform: translateX(-50%) translateY(100px);
   opacity: 0;
-  background: var(--chrome-black-card);
-  border: 1px solid rgba(217, 221, 224, 0.2);
+  background: var(--purple-primary);
+  border: 1px solid rgba(215, 185, 255, 0.3);
   color: #FFFFFF;
   padding: 1rem 1.75rem;
   border-radius: 16px;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7), 0 0 20px rgba(48, 32, 79, 0.25);
+  box-shadow: 0 16px 36px rgba(19, 6, 35, 0.8), 0 0 25px rgba(110, 48, 191, 0.35);
   z-index: 1000;
   display: flex;
   align-items: center;
   gap: 0.75rem;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
+}
+
+.toast-notification.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.toast-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #10b981;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .toast-notification.show {

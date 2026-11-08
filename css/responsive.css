@@ -40,7 +40,7 @@
   }
 
   .hero-overlay-left {
-    background: linear-gradient(180deg, rgba(13, 14, 17, 0.25) 0%, rgba(13, 14, 17, 0.7) 45%, #0D0E11 82%);
+    background: linear-gradient(180deg, rgba(21, 8, 39, 0.25) 0%, rgba(21, 8, 39, 0.75) 45%, #150827 82%);
   }
 
   .hero-content-container {
@@ -53,8 +53,8 @@
     border-radius: 22px;
     max-width: 100%;
     margin: 0 auto;
-    background: rgba(26, 28, 33, 0.88);
-    border: 1px solid rgba(217, 221, 224, 0.18);
+    background: rgba(34, 12, 63, 0.88);
+    border: 1px solid rgba(215, 185, 255, 0.2);
   }
 
   .hero-statement {
@@ -173,6 +173,87 @@
   .philosophy-pillar {
     padding: 1.25rem;
     border-radius: 16px;
+  }
+
+  /* Personal Bridge Card Mobile Adaptation */
+  .personal-bridge-card {
+    padding: 2.25rem 1.35rem;
+    border-radius: 24px;
+    gap: 1.75rem;
+  }
+
+  .bridge-title {
+    font-size: 1.45rem;
+  }
+
+  .bridge-description {
+    font-size: 0.9rem;
+  }
+
+  .bridge-explore-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Dedicated Personal Journey Page Mobile Adaptation */
+  .pj-hero-section {
+    padding: 3.5rem 0 2.5rem;
+  }
+
+  .pj-hero-title {
+    font-size: 2rem;
+  }
+
+  .pj-hero-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .pj-verse-card {
+    padding: 2.25rem 1.25rem;
+    border-radius: 24px;
+    margin-bottom: 2.5rem;
+  }
+
+  .pj-arabic-verse {
+    font-size: 1.55rem;
+    line-height: 2.15;
+    margin-bottom: 1.25rem;
+  }
+
+  .pj-verse-translation {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .pj-narrative-card {
+    padding: 2rem 1.25rem;
+    border-radius: 22px;
+  }
+
+  .pj-milestone-highlight {
+    padding: 2rem 1.25rem;
+    border-radius: 22px;
+  }
+
+  .pj-milestone-title {
+    font-size: 1.25rem;
+  }
+
+  .pj-return-card {
+    padding: 2.5rem 1.35rem;
+    border-radius: 24px;
+  }
+
+  .pj-return-btn-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .pj-return-primary-btn,
+  .pj-return-secondary-btn {
+    width: 100%;
+    justify-content: center;
   }
 
   /* Quran Journey Section Mobile Adaptation */
@@ -337,6 +418,58 @@
     justify-content: center;
     gap: 1.25rem;
   }
+
+  /* Personal Journey Page Mobile Optimizations */
+  .pj-header-pill {
+    padding: 0.65rem 1rem;
+  }
+
+  .pj-header-pill .rub-el-hizb-badge {
+    display: none;
+  }
+
+  .return-portfolio-btn {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.85rem;
+  }
+
+  .pj-hero-section {
+    padding: 3.5rem 0 2.5rem;
+  }
+
+  .pj-verse-card {
+    padding: 2.25rem 1.25rem;
+    border-radius: 24px;
+    margin-bottom: 2.5rem;
+  }
+
+  .pj-arabic-verse {
+    font-size: 1.65rem;
+    line-height: 2;
+  }
+
+  .pj-verse-translation {
+    font-size: 1.05rem;
+  }
+
+  .pj-narrative-card,
+  .pj-milestone-highlight,
+  .pj-rose-card,
+  .pj-return-card {
+    padding: 1.75rem 1.25rem;
+    border-radius: 22px;
+  }
+
+  .pj-return-btn-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .pj-return-primary-btn,
+  .pj-return-secondary-btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 /* --- Tablet Devices (768px - 1023px) --- */
@@ -346,7 +479,7 @@
   }
 
   .hero-overlay-left {
-    background: linear-gradient(90deg, #0D0E11 0%, #0D0E11 30%, rgba(13, 14, 17, 0.7) 60%, rgba(13, 14, 17, 0.25) 100%);
+    background: linear-gradient(90deg, #150827 0%, #150827 30%, rgba(21, 8, 39, 0.8) 60%, rgba(34, 12, 63, 0.25) 100%);
   }
 
   .hero-quote-card {
