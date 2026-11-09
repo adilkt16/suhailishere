@@ -122,3 +122,4 @@
     initDynamicGradient();
   }
 })();
+
