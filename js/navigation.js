@@ -42,6 +42,16 @@ function initNavigation() {
     });
   }
 
+  // Handle initial hash in URL if present
+  if (window.location.hash) {
+    const initialTarget = window.location.hash.substring(1);
+    if (document.getElementById(initialTarget)) {
+      setTimeout(() => {
+        scrollToSection(initialTarget);
+      }, 100);
+    }
+  }
+
   // Bind clicks on all navigation triggers
   document.querySelectorAll('a[href^="#"], button[data-target]').forEach(trigger => {
     trigger.addEventListener('click', (e) => {

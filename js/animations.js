@@ -19,6 +19,19 @@ function initScrollAnimations() {
 
   const revealElements = document.querySelectorAll('.reveal');
 
+  // Immediately reveal elements already inside or near the viewport on load
+  function checkInitialVisibility() {
+    const windowHeight = window.innerHeight;
+    revealElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top <= windowHeight * 0.95 && rect.bottom >= 0) {
+        el.classList.add('active');
+      }
+    });
+  }
+  checkInitialVisibility();
+  window.addEventListener('scroll', checkInitialVisibility, { passive: true, once: true });
+
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -29,12 +42,19 @@ function initScrollAnimations() {
     });
   }, {
     root: null,
-    rootMargin: '0px 0px -60px 0px',
-    threshold: 0.12
+    rootMargin: '0px 0px -30px 0px',
+    threshold: 0.05
   });
 
   revealElements.forEach(el => {
-    revealObserver.observe(el);
+    if (!el.classList.contains('active')) {
+      revealObserver.observe(el);
+    }
   });
+
+  // Fallback timer: ensure all content becomes visible even if observer or scroll didn't fire
+  setTimeout(() => {
+    revealElements.forEach(el => el.classList.add('active'));
+  }, 900);
 }
 

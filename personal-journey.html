@@ -31,6 +31,16 @@
 </head>
 <body class="pj-body">
 
+  <!-- Dynamic Atmospheric Background Canvas (#220C3F & Deep Black Gradient) -->
+  <div class="dynamic-ambient-canvas" aria-hidden="true">
+    <div class="ambient-orb ambient-orb-1"></div>
+    <div class="ambient-orb ambient-orb-2"></div>
+    <div class="ambient-orb ambient-orb-3"></div>
+  </div>
+
+  <!-- Dynamic Cursor Spotlight Layer (Dual-layer radial gradient inspired by reference site) -->
+  <div class="dynamic-spotlight-layer" id="dynamic-spotlight" aria-hidden="true"></div>
+
   <!-- =========================================================================
        Top Header Pill with Clean Return Navigation
        ========================================================================= -->
@@ -319,6 +329,7 @@
   </footer>
 
   <!-- Scripts -->
+  <script src="js/dynamic-gradient.js"></script>
   <script src="js/animations.js"></script>
   <script src="js/navigation.js"></script>
 </body>

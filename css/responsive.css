@@ -40,7 +40,7 @@
   }
 
   .hero-overlay-left {
-    background: linear-gradient(180deg, rgba(21, 8, 39, 0.25) 0%, rgba(21, 8, 39, 0.75) 45%, #150827 82%);
+    background: linear-gradient(180deg, rgba(6, 2, 12, 0.25) 0%, rgba(34, 12, 63, 0.6) 45%, #06020c 82%);
   }
 
   .hero-content-container {
@@ -479,7 +479,7 @@
   }
 
   .hero-overlay-left {
-    background: linear-gradient(90deg, #150827 0%, #150827 30%, rgba(21, 8, 39, 0.8) 60%, rgba(34, 12, 63, 0.25) 100%);
+    background: linear-gradient(90deg, #06020c 0%, #06020c 30%, rgba(34, 12, 63, 0.6) 60%, transparent 100%);
   }
 
   .hero-quote-card {
