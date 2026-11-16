@@ -791,135 +791,19 @@ input, textarea, select {
 .hero-portrait-card {
   position: relative;
   width: 100%;
-  aspect-ratio: 3.6 / 4.4;
+  aspect-ratio: 3.5 / 4.3;
   border-radius: 28px;
   overflow: hidden;
   background: linear-gradient(145deg, rgba(43, 16, 78, 0.7) 0%, rgba(34, 12, 63, 0.8) 100%);
-  border: 1px solid var(--honeycomb-border);
+  border: 1.5px solid var(--honeycomb-border);
   box-shadow: 0 25px 60px rgba(6, 2, 12, 0.85), 0 0 35px rgba(34, 12, 63, 0.45);
+  transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
 }
 
-.hero-portrait-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent 0%, var(--honey-gold) 50%, transparent 100%);
-  z-index: 3;
-}
-
-.hero-portrait-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 18%;
-  filter: contrast(1.06) brightness(0.9);
-  transition: transform var(--transition-smooth);
-}
-
-.hero-portrait-card:hover img {
-  transform: scale(1.03);
-}
-
-/* Subtle botanical motif inside portrait corner */
-.hero-portrait-rose-accent {
-  position: absolute;
-  bottom: -20px;
-  right: -20px;
-  width: 140px;
-  height: 140px;
-  opacity: 0.15;
-  pointer-events: none;
-  z-index: 2;
-  transition: opacity 0.3s ease;
-}
-
-.hero-portrait-card:hover .hero-portrait-rose-accent {
-  opacity: 0.28;
-}
-
-/* Interlocking Honeycomb Stats Cluster */
-.hero-stats-cluster {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.hero-stat-node {
-  position: absolute;
-  pointer-events: auto;
-  background: rgba(14, 5, 26, 0.88);
-  border: 1px solid var(--honeycomb-border);
-  border-radius: 16px;
-  padding: 0.75rem 1rem;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 12px 30px rgba(6, 2, 12, 0.75), 0 0 15px rgba(197, 160, 89, 0.12);
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-  z-index: 4;
-}
-
-.hero-stat-node:hover {
-  transform: translateY(-3px);
+.hero-portrait-card:hover {
   border-color: var(--honey-gold-bright);
-  box-shadow: 0 16px 35px rgba(6, 2, 12, 0.85), 0 0 20px rgba(229, 169, 60, 0.25);
-}
-
-.stat-node-1 {
-  top: -15px;
-  left: -20px;
-}
-
-.stat-node-2 {
-  bottom: 25px;
-  right: -25px;
-}
-
-.stat-node-3 {
-  bottom: -20px;
-  left: 15px;
-}
-
-.stat-hex-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  clip-path: var(--honeycomb-clip);
-  background: linear-gradient(135deg, #361560 0%, #220C3F 100%);
-  color: var(--honey-gold-bright);
-  border: 1px solid var(--honeycomb-border);
-  flex-shrink: 0;
-}
-
-.stat-hex-icon svg {
-  width: 16px;
-  height: 16px;
-}
-
-.stat-content {
-  display: flex;
-  flex-direction: column;
-}
-
-.stat-value {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #FFFFFF;
-  line-height: 1.2;
-}
-
-.stat-label {
-  font-size: 0.74rem;
-  font-weight: 400;
-  color: #D2C7DF;
-  letter-spacing: 0.02em;
+  box-shadow: 0 30px 70px rgba(6, 2, 12, 0.95), 0 0 45px rgba(229, 169, 60, 0.25);
+  transform: translateY(-2px);
 }
 
 /* --- Section Containers --- */
@@ -1228,44 +1112,153 @@ input, textarea, select {
   color: #D2C7DF;
 }
 
-/* Institutional Ecosystem Grid */
-.institutional-ecosystem-grid {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1.5rem;
+/* ==========================================================================
+   Operational Ecosystem — Categorized 2-Column Executive Spheres
+   ========================================================================== */
+.ecosystem-spheres-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  margin-top: 3.5rem;
 }
 
-.ecosystem-hex-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  border-radius: 9999px;
-  background: rgba(34, 12, 63, 0.65);
+@media (min-width: 768px) {
+  .ecosystem-spheres-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+.ecosystem-sphere-card {
+  position: relative;
+  background: linear-gradient(145deg, rgba(27, 9, 52, 0.8) 0%, rgba(17, 5, 34, 0.92) 100%);
   border: 1px solid var(--honeycomb-border);
-  color: #EDE7F4;
-  font-size: 0.82rem;
+  border-radius: 22px;
+  padding: 2.25rem 2rem;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 16px 40px rgba(6, 2, 12, 0.7), 0 0 20px rgba(34, 12, 63, 0.3);
+  transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+  overflow: hidden;
+}
+
+.ecosystem-sphere-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--honey-gold) 50%, transparent 100%);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.ecosystem-sphere-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--honey-gold-bright);
+  box-shadow: 0 22px 50px rgba(6, 2, 12, 0.88), 0 0 30px rgba(229, 169, 60, 0.2);
+}
+
+.ecosystem-sphere-card:hover::before {
+  opacity: 1;
+}
+
+.sphere-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(215, 185, 255, 0.12);
+}
+
+.sphere-hex-icon {
+  width: 46px;
+  height: 46px;
+  clip-path: var(--honeycomb-clip);
+  background: linear-gradient(135deg, #361560 0%, #220C3F 100%);
+  color: var(--honey-gold-bright);
+  border: 1px solid var(--honeycomb-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(6, 2, 12, 0.5);
+}
+
+.sphere-hex-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.sphere-title {
+  font-size: 1.18rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 0.2rem;
+  letter-spacing: -0.01em;
+}
+
+.sphere-subtitle {
+  font-size: 0.78rem;
   font-weight: 500;
-  letter-spacing: 0.04em;
-  backdrop-filter: blur(12px);
+  color: var(--honey-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sphere-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.sphere-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 0.85rem 1.15rem;
+  border-radius: 14px;
+  background: rgba(34, 12, 63, 0.45);
+  border: 1px solid rgba(215, 185, 255, 0.08);
   transition: all var(--transition-fast);
 }
 
-.ecosystem-hex-badge:hover {
-  border-color: var(--honey-gold-bright);
-  color: #FFFFFF;
-  background: rgba(54, 21, 96, 0.85);
-  transform: translateY(-2px);
+.sphere-item:hover {
+  background: rgba(54, 21, 96, 0.65);
+  border-color: rgba(197, 160, 89, 0.35);
+  transform: translateX(3px);
 }
 
-.ecosystem-dot {
-  width: 6px;
-  height: 6px;
+.sphere-item-dot {
+  width: 7px;
+  height: 7px;
   clip-path: var(--honeycomb-clip);
   background: var(--honey-gold-bright);
+  margin-top: 0.45rem;
+  flex-shrink: 0;
+  box-shadow: 0 0 6px var(--honey-gold-glow);
+}
+
+.sphere-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.sphere-item-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #FAF8FC;
+  letter-spacing: 0.01em;
+}
+
+.sphere-item-role {
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: #D2C7DF;
+  line-height: 1.45;
 }
 
 /* --- Experience Section --- */

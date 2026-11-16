@@ -67,30 +67,7 @@
 
   .hero-visual-frame {
     max-width: 320px;
-  }
-
-  .stat-node-1 {
-    top: -10px;
-    left: -10px;
-    padding: 0.5rem 0.75rem;
-  }
-
-  .stat-node-2 {
-    bottom: 10px;
-    right: -10px;
-    padding: 0.5rem 0.75rem;
-  }
-
-  .stat-node-3 {
-    display: none;
-  }
-
-  .stat-value {
-    font-size: 0.82rem;
-  }
-
-  .stat-label {
-    font-size: 0.68rem;
+    margin: 0 auto;
   }
 
   .subnav-outer-wrap {
