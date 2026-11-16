@@ -21,16 +21,15 @@ function initNavigation() {
   const mobileDrawerClose = document.querySelector('.mobile-drawer-close');
   const mobileDrawerLinks = document.querySelectorAll('.mobile-drawer-link');
   
-  const speedDialItems = document.querySelectorAll('.speed-dial-item');
-  const speedDialWrap = document.querySelector('.speed-dial-wrap');
-  const speedDialTrigger = document.querySelector('.speed-dial-trigger');
+  const speedDialWrap = document.querySelector('.speed-dial-wrap, .hex-quicknav-dock');
+  const speedDialTrigger = document.querySelector('.speed-dial-trigger, .hex-quicknav-trigger');
 
-  // --- Smooth Scroll to Target with Header/Pill Offset ---
+  // --- Smooth Scroll to Target with Header Offset ---
   function scrollToSection(targetId) {
     const targetElement = document.getElementById(targetId);
     if (!targetElement) return;
 
-    const offset = 85; // Compensation for sticky subnav pill
+    const offset = 75; // Header offset
     const bodyRect = document.body.getBoundingClientRect().top;
     const elementRect = targetElement.getBoundingClientRect().top;
     const elementPosition = elementRect - bodyRect;
@@ -196,13 +195,22 @@ function initNavigation() {
       }
     });
 
-    // 3. Update Top Header Links
+    // 3. Update Top Header Links & Quicknav Items
     document.querySelectorAll('.header-link, .mobile-drawer-link').forEach(link => {
       const href = link.getAttribute('href');
       if (href === `#${activeId}`) {
         link.classList.add('active');
       } else {
         link.classList.remove('active');
+      }
+    });
+
+    document.querySelectorAll('.speed-dial-item, .hex-quicknav-item').forEach(item => {
+      const target = item.getAttribute('data-target');
+      if (target === activeId) {
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active');
       }
     });
   }
